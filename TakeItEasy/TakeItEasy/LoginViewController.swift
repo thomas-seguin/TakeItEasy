@@ -9,6 +9,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var test: UILabel!
     @IBOutlet weak var rememberSwitch: UISwitch!
     @IBOutlet weak var passTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
@@ -31,6 +32,7 @@ class LoginViewController: UIViewController {
         }
         let password = String(decoding: data, as: UTF8.self)
         if(password == pass){
+            test.text = "logged in"
             
             print("logged in")
            

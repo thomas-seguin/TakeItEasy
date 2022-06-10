@@ -95,6 +95,13 @@
                                     <segue destination="7Ig-oa-Bx1" kind="presentation" id="f7r-NN-7sD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXe-Lc-xQ0">
+                                <rect key="frame" x="174" y="736" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="LTc-EP-RrQ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -103,6 +110,7 @@
                         <outlet property="emailTxt" destination="vJo-Oc-vs9" id="en3-Dc-cSm"/>
                         <outlet property="passTxt" destination="vwa-y8-nmx" id="BD0-II-ATI"/>
                         <outlet property="rememberSwitch" destination="jrv-9O-C6p" id="eCT-HB-9sk"/>
+                        <outlet property="test" destination="YXe-Lc-xQ0" id="0N3-yS-JVe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WZd-F5-MGr" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
