@@ -13,9 +13,22 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var technicalBooksCollection: UICollectionView!
     @IBOutlet weak var cookBooksCollection: UICollectionView!
     
-    var books = ["book2"]
+    var books = ["bookSample"]
+    var filteredBooks = [String]()
+    var isSearchingBook = false
+    
+    var allBooks = [Books]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchBooks(){/*data in*/
+            //self.allBooks = data
+            DispatchQueue.main.async {
+                self.generalBooksCollection.reloadData()
+                self.technicalBooksCollection.reloadData()
+                self.cookBooksCollection.reloadData()
+            }
+        }
 
     }
 
@@ -46,9 +59,63 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyObject = UIStoryboard(name: "Main", bundle: nil)
-        let bookPDFController = storyObject.instantiateViewController(withIdentifier: "bookPdf") as! BookPDFViewController
-        bookPDFController.bookName = books[0]
-        navigationController?.pushViewController(bookPDFController, animated: true)
+        let bookPDFController = storyObject.instantiateViewController(withIdentifier: "bookPDF") as! BookPDFViewController
+        if collectionView == generalBooksCollection{
+            bookPDFController.bookName = "bookSample"
+        }else if (collectionView == technicalBooksCollection) {
+            bookPDFController.bookName = "bookSample"
+        } else{
+            bookPDFController.bookName = "bookSample"
+
+        }
+
+                navigationController?.pushViewController(bookPDFController, animated: true)
+    }
+    
+    func fetchBooks(completion: @escaping (/*[Books]*/) -> ()){
+        
+        let session = URLSession.shared
+        
+        let urlString = "https://api.nytimes.com/svc/books/v3/lists/current/hardcover-fiction.json?api-key=jHTLUbJD4QhdeZmiMbeFb0MEVYxI8H1E"
+        let fetchURL = URL(string: urlString)
+        guard fetchURL != nil else{
+            print("Error ---> fetching Books Url")
+            return
+        }
+        let bufferedData = session.dataTask(with: fetchURL!){data, response, error in
+            if data != nil, error == nil {
+                let decoder = JSONDecoder()
+                do{
+                    let decodedBooks = try decoder.decode(BooksApi.self, from: data!)
+                    print(decodedBooks) //trials remove
+                    completion(/*decodedBooks*/)
+                }catch{
+                    print("Error ---> Decoding books")
+                }
+            }
+        }
+        bufferedData.resume()
+        
     }
 
+}
+
+extension BooksViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredBooks = books.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        isSearchingBook = true
+        self.generalBooksCollection.reloadData()
+    }
+    
+}
+struct BooksApi: Decodable {
+    var status: String
+    var copyright: String
+    var results: Int
+    //var results: [String]
+}
+struct Books: Decodable{
+    var author: String?
+    var title: String?
+    //var book_image: String?
 }

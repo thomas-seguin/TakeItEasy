@@ -21,7 +21,7 @@
 		84DB6B8B285192AF000813FF /* CookBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB6B8A285192AE000813FF /* CookBooksCollectionViewCell.swift */; };
 		84DB6B8D285192D9000813FF /* TechnicalBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB6B8C285192D9000813FF /* TechnicalBooksCollectionViewCell.swift */; };
 		84DB6B8F28523082000813FF /* BookPDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB6B8E28523082000813FF /* BookPDFViewController.swift */; };
-		84DB6B9128523270000813FF /* Books in Resources */ = {isa = PBXBuildFile; fileRef = 84DB6B9028523270000813FF /* Books */; };
+		84DB6B96285240E1000813FF /* bookSample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 84DB6B95285240E1000813FF /* bookSample.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +41,7 @@
 		84DB6B8A285192AE000813FF /* CookBooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookBooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		84DB6B8C285192D9000813FF /* TechnicalBooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TechnicalBooksCollectionViewCell.swift; sourceTree = "<group>"; };
 		84DB6B8E28523082000813FF /* BookPDFViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPDFViewController.swift; sourceTree = "<group>"; };
-		84DB6B9028523270000813FF /* Books */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Books; path = ../../../../../Desktop/Project/FunZone/FunZone/Books; sourceTree = "<group>"; };
+		84DB6B95285240E1000813FF /* bookSample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = bookSample.pdf; path = ../../../../../../Downloads/bookSample.pdf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +74,7 @@
 		841EA18F2851367600318BCA /* TakeItEasy */ = {
 			isa = PBXGroup;
 			children = (
+				84DB6B9228523FC3000813FF /* BooksPDFs */,
 				841EA1A92851373E00318BCA /* Controllers */,
 				841EA1A82851373500318BCA /* ViewModels */,
 				841EA1A7285136BD00318BCA /* Models */,
@@ -90,7 +91,6 @@
 				84DB6B8A285192AE000813FF /* CookBooksCollectionViewCell.swift */,
 				84DB6B8C285192D9000813FF /* TechnicalBooksCollectionViewCell.swift */,
 				84DB6B8E28523082000813FF /* BookPDFViewController.swift */,
-				84DB6B9028523270000813FF /* Books */,
 			);
 			path = TakeItEasy;
 			sourceTree = "<group>";
@@ -116,6 +116,14 @@
 				7EE4E109285141C600E0373E /* SearchViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		84DB6B9228523FC3000813FF /* BooksPDFs */ = {
+			isa = PBXGroup;
+			children = (
+				84DB6B95285240E1000813FF /* bookSample.pdf */,
+			);
+			path = BooksPDFs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -179,7 +187,7 @@
 				841EA1A02851367900318BCA /* LaunchScreen.storyboard in Resources */,
 				841EA19D2851367900318BCA /* Assets.xcassets in Resources */,
 				841EA1982851367600318BCA /* Main.storyboard in Resources */,
-				84DB6B9128523270000813FF /* Books in Resources */,
+				84DB6B96285240E1000813FF /* bookSample.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
