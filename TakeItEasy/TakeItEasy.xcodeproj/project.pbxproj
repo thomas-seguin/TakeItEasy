@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7ECAEC9828570C2A00AC3B11 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAEC9728570C2A00AC3B11 /* UserSingleton.swift */; };
+		7ECAEC9A28570C6200AC3B11 /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAEC9928570C6200AC3B11 /* APIModels.swift */; };
+		7ECAEC9C28570CB900AC3B11 /* MusicSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAEC9B28570CB900AC3B11 /* MusicSearchManager.swift */; };
 		7EE4E10A285141C600E0373E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4E109285141C600E0373E /* SearchViewController.swift */; };
 		7EE4E10C285141EA00E0373E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4E10B285141EA00E0373E /* SearchViewModel.swift */; };
 		841EA1912851367600318BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EA1902851367600318BCA /* AppDelegate.swift */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7ECAEC9728570C2A00AC3B11 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
+		7ECAEC9928570C6200AC3B11 /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
+		7ECAEC9B28570CB900AC3B11 /* MusicSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchManager.swift; sourceTree = "<group>"; };
 		7EE4E109285141C600E0373E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = TakeItEasy/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		7EE4E10B285141EA00E0373E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = TakeItEasy/SearchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		841EA18D2851367600318BCA /* TakeItEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeItEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +111,7 @@
 				84575D5E2853C43000339A17 /* LoginViewController.swift */,
 				84575D602853C71B00339A17 /* RegisterViewController.swift */,
 				84575D622853C7D400339A17 /* KeyChainManger.swift */,
+				7ECAEC9728570C2A00AC3B11 /* UserSingleton.swift */,
 			);
 			path = TakeItEasy;
 			sourceTree = "<group>";
@@ -112,6 +119,7 @@
 		841EA1A7285136BD00318BCA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7ECAEC9928570C6200AC3B11 /* APIModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -120,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				7EE4E10B285141EA00E0373E /* SearchViewModel.swift */,
+				7ECAEC9B28570CB900AC3B11 /* MusicSearchManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -221,9 +230,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ECAEC9A28570C6200AC3B11 /* APIModels.swift in Sources */,
 				84575D5F2853C43000339A17 /* LoginViewController.swift in Sources */,
 				84DB6B8B285192AF000813FF /* CookBooksCollectionViewCell.swift in Sources */,
 				84575D672853C86A00339A17 /* User+CoreDataProperties.swift in Sources */,
+				7ECAEC9828570C2A00AC3B11 /* UserSingleton.swift in Sources */,
+				7ECAEC9C28570CB900AC3B11 /* MusicSearchManager.swift in Sources */,
 				7EE4E10C285141EA00E0373E /* SearchViewModel.swift in Sources */,
 				84DB6B8F28523082000813FF /* BookPDFViewController.swift in Sources */,
 				7EE4E10A285141C600E0373E /* SearchViewController.swift in Sources */,
