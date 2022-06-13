@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7ECAEC922856FBBA00AC3B11 /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAEC912856FBBA00AC3B11 /* APIModels.swift */; };
+		7ECAEC942856FC4500AC3B11 /* MusicSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAEC932856FC4500AC3B11 /* MusicSearchManager.swift */; };
+		7ECAEC962856FF8500AC3B11 /* UserSingleT.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAEC952856FF8500AC3B11 /* UserSingleT.swift */; };
 		7EE4E10A285141C600E0373E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4E109285141C600E0373E /* SearchViewController.swift */; };
 		7EE4E10C285141EA00E0373E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4E10B285141EA00E0373E /* SearchViewModel.swift */; };
 		841EA1912851367600318BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EA1902851367600318BCA /* AppDelegate.swift */; };
@@ -25,6 +28,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7ECAEC912856FBBA00AC3B11 /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
+		7ECAEC932856FC4500AC3B11 /* MusicSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchManager.swift; sourceTree = "<group>"; };
+		7ECAEC952856FF8500AC3B11 /* UserSingleT.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleT.swift; sourceTree = "<group>"; };
 		7EE4E109285141C600E0373E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = TakeItEasy/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		7EE4E10B285141EA00E0373E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = TakeItEasy/SearchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		841EA18D2851367600318BCA /* TakeItEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeItEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -91,6 +97,7 @@
 				84DB6B8A285192AE000813FF /* CookBooksCollectionViewCell.swift */,
 				84DB6B8C285192D9000813FF /* TechnicalBooksCollectionViewCell.swift */,
 				84DB6B8E28523082000813FF /* BookPDFViewController.swift */,
+				7ECAEC952856FF8500AC3B11 /* UserSingleT.swift */,
 			);
 			path = TakeItEasy;
 			sourceTree = "<group>";
@@ -98,6 +105,7 @@
 		841EA1A7285136BD00318BCA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7ECAEC912856FBBA00AC3B11 /* APIModels.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -105,6 +113,7 @@
 		841EA1A82851373500318BCA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				7ECAEC932856FC4500AC3B11 /* MusicSearchManager.swift */,
 				7EE4E10B285141EA00E0373E /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
@@ -198,7 +207,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7ECAEC942856FC4500AC3B11 /* MusicSearchManager.swift in Sources */,
+				7ECAEC922856FBBA00AC3B11 /* APIModels.swift in Sources */,
 				84DB6B8B285192AF000813FF /* CookBooksCollectionViewCell.swift in Sources */,
+				7ECAEC962856FF8500AC3B11 /* UserSingleT.swift in Sources */,
 				7EE4E10C285141EA00E0373E /* SearchViewModel.swift in Sources */,
 				84DB6B8F28523082000813FF /* BookPDFViewController.swift in Sources */,
 				7EE4E10A285141C600E0373E /* SearchViewController.swift in Sources */,
@@ -355,6 +367,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RR35PJ7W88;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TakeItEasy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -382,6 +395,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RR35PJ7W88;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TakeItEasy/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
