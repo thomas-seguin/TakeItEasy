@@ -10,11 +10,12 @@ import PDFKit
 
 class BookPDFViewController: UIViewController {
 
+    @IBOutlet weak var bookTitleLabel: UILabel!
     var bookName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = bookName!
         let pdfView = PDFView(frame: view.bounds)
         pdfView.autoScales = true
         let filePath = Bundle.main.url(forResource: bookName, withExtension: "pdf")

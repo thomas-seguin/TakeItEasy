@@ -9,4 +9,6 @@ import UIKit
 
 class GeneralBooksCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var author: UILabel!
+    @IBOutlet weak var title: UILabel!
 }
