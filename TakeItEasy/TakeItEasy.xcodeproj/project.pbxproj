@@ -167,7 +167,6 @@
 		841EA1A82851373500318BCA /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				7EE6440C28593D8700AE353C /* QuizViewController.swift */,
 				7EE4E10B285141EA00E0373E /* SearchViewModel.swift */,
 			);
 			path = ViewModels;
@@ -177,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				7EE4E109285141C600E0373E /* SearchViewController.swift */,
+				7EE6440C28593D8700AE353C /* QuizViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
