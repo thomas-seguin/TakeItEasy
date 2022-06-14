@@ -254,6 +254,7 @@
                                         <size key="customSize" width="127" height="180"/>
                                         <connections>
                                             <outlet property="SongName" destination="Ohe-uh-goQ" id="RTQ-M6-v5N"/>
+                                            <outlet property="albumImage" destination="weZ-1a-21A" id="1rv-0Q-a4L"/>
                                             <outlet property="songName" destination="Ohe-uh-goQ" id="gmb-lk-dPE"/>
                                         </connections>
                                     </collectionViewCell>
@@ -273,13 +274,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="8UZ-OK-ktT">
-                                <rect key="frame" x="212" y="449.66666666666669" width="198" height="31"/>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" minimumValueImage="volume.slash.fill" catalog="system" maximumValueImage="volume.3.fill" translatesAutoresizingMaskIntoConstraints="NO" id="8UZ-OK-ktT">
+                                <rect key="frame" x="272" y="529.66666666666663" width="198" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="3z4-Og-kHt"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="194" id="gRm-BI-Sp8"/>
                                     <constraint firstAttribute="width" constant="194" id="i4J-Pc-itI"/>
                                 </constraints>
+                                <color key="minimumTrackTintColor" systemColor="systemGreenColor"/>
+                                <color key="maximumTrackTintColor" systemColor="systemRedColor"/>
                                 <connections>
                                     <action selector="volumeControl:" destination="OOG-nb-MA2" eventType="valueChanged" id="5Ms-Ty-E6U"/>
                                 </connections>
@@ -324,18 +327,17 @@
                             <constraint firstItem="fem-8a-DQM" firstAttribute="leading" secondItem="JGi-oT-Us3" secondAttribute="leading" id="2g5-jJ-iHm"/>
                             <constraint firstItem="goZ-gs-8UM" firstAttribute="leading" secondItem="fJe-fm-53d" secondAttribute="leading" constant="20" id="MA8-Gn-nZT"/>
                             <constraint firstItem="01j-0d-n19" firstAttribute="trailing" secondItem="goZ-gs-8UM" secondAttribute="trailing" id="MBJ-lz-sX6"/>
-                            <constraint firstItem="fJe-fm-53d" firstAttribute="trailing" secondItem="8UZ-OK-ktT" secondAttribute="trailing" constant="20" id="NBH-5d-ede"/>
+                            <constraint firstItem="fJe-fm-53d" firstAttribute="trailing" secondItem="8UZ-OK-ktT" secondAttribute="trailing" constant="-40" id="NBH-5d-ede"/>
                             <constraint firstItem="Gt2-7W-yff" firstAttribute="centerX" secondItem="fem-8a-DQM" secondAttribute="centerX" id="QsP-gR-O0V"/>
                             <constraint firstItem="goZ-gs-8UM" firstAttribute="centerX" secondItem="JGi-oT-Us3" secondAttribute="centerX" id="RTe-9W-zMd"/>
                             <constraint firstItem="fem-8a-DQM" firstAttribute="top" secondItem="oXd-uT-qMk" secondAttribute="bottom" constant="13" id="UwY-qm-M2x"/>
                             <constraint firstItem="Gt2-7W-yff" firstAttribute="leading" secondItem="JGi-oT-Us3" secondAttribute="leadingMargin" constant="-12" id="V79-Pr-2lJ"/>
                             <constraint firstItem="Gt2-7W-yff" firstAttribute="top" secondItem="goZ-gs-8UM" secondAttribute="bottom" constant="13" id="VDL-Lo-fxG"/>
-                            <constraint firstItem="8UZ-OK-ktT" firstAttribute="top" secondItem="F7l-Oc-Tz9" secondAttribute="bottom" constant="20" id="bBd-NF-bgG"/>
                             <constraint firstItem="Gt2-7W-yff" firstAttribute="centerX" secondItem="goZ-gs-8UM" secondAttribute="centerX" id="dbK-C0-bkF"/>
                             <constraint firstItem="goZ-gs-8UM" firstAttribute="centerY" secondItem="JGi-oT-Us3" secondAttribute="centerY" constant="200" id="dgx-BY-rKT"/>
                             <constraint firstItem="01j-0d-n19" firstAttribute="top" secondItem="goZ-gs-8UM" secondAttribute="bottom" constant="8" symbolic="YES" id="eTB-lh-t9Q"/>
                             <constraint firstItem="F7l-Oc-Tz9" firstAttribute="centerY" secondItem="JGi-oT-Us3" secondAttribute="centerY" constant="-150" id="eVj-XE-3cc"/>
-                            <constraint firstItem="8UZ-OK-ktT" firstAttribute="top" secondItem="F7l-Oc-Tz9" secondAttribute="bottom" constant="20" id="kFe-1z-6on"/>
+                            <constraint firstItem="8UZ-OK-ktT" firstAttribute="top" secondItem="F7l-Oc-Tz9" secondAttribute="bottom" constant="100" id="kFe-1z-6on"/>
                             <constraint firstItem="oXd-uT-qMk" firstAttribute="top" secondItem="goZ-gs-8UM" secondAttribute="bottom" constant="8" symbolic="YES" id="kXi-xY-jYe"/>
                             <constraint firstItem="fJe-fm-53d" firstAttribute="trailing" secondItem="goZ-gs-8UM" secondAttribute="trailing" constant="20" id="ucH-Ua-rV0"/>
                             <constraint firstItem="oXd-uT-qMk" firstAttribute="leading" secondItem="goZ-gs-8UM" secondAttribute="leading" id="vNZ-Qy-5io"/>
@@ -350,6 +352,7 @@
                         <outlet property="lblOverallDuration" destination="01j-0d-n19" id="a0t-Dr-v09"/>
                         <outlet property="lblcurrentText" destination="oXd-uT-qMk" id="Muc-EF-Dkg"/>
                         <outlet property="playbackSlider" destination="goZ-gs-8UM" id="M7K-YU-kDB"/>
+                        <outlet property="volumeControlSlider" destination="8UZ-OK-ktT" id="gjt-dV-T0R"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y0t-hM-4xV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -692,9 +695,17 @@
         <image name="note" catalog="system" width="128" height="106"/>
         <image name="playpause.fill" catalog="system" width="128" height="70"/>
         <image name="questionmark.folder" catalog="system" width="128" height="97"/>
+        <image name="volume.3.fill" catalog="system" width="128" height="86"/>
+        <image name="volume.slash.fill" catalog="system" width="124" height="128"/>
         <image name="wp2817719" width="300" height="533.33331298828125"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

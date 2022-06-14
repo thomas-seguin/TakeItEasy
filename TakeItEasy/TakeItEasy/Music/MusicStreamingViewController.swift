@@ -12,25 +12,23 @@ import WebKit
 
 class MusicStreamingViewController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,UISearchResultsUpdating {
     
-    
-    
     var songs = [Song]()
     var player: Player!
     var musicURL: URL!
     
+    var albumImage = ["img 1","img 2","img 3","img 4","img 5","img 6","img 7","img 8","img 9","img 10","img 11"]
     
     var mplayer:AVPlayer?
     var playerItem:AVPlayerItem?
     fileprivate let seekDuration: Float64 = 10
     
+    @IBOutlet weak var volumeControlSlider: UISlider!
     @IBOutlet weak var lblOverallDuration: UILabel!
     @IBOutlet weak var lblcurrentText: UILabel!
     @IBOutlet weak var playbackSlider: UISlider!
     
     @IBOutlet weak var currentSong: UILabel!
     @IBOutlet weak var MusicCollectionView: UICollectionView!
-    
-    
     
     
     let searchController = UISearchController()
@@ -43,13 +41,15 @@ class MusicStreamingViewController: UIViewController,UICollectionViewDelegate,UI
         player = Player()
         retrieveSongs()
         
+        volumeControlSlider.transform = CGAffineTransform(rotationAngle: (CGFloat.pi / -2))
+        
         let mplay = AVPlayer()
         if let currentItem = mplay.currentItem {
             let duration = currentItem.asset.duration
         }
             let currenTime = mplay.currentTime()
         
-        print()
+        
         
     }
     
@@ -116,6 +116,7 @@ class MusicStreamingViewController: UIViewController,UICollectionViewDelegate,UI
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: "MusicCell", for: indexPath) as! SongsCollectionViewCell
         
+        cell.albumImage.image = UIImage(named: albumImage[indexPath.row])
         cell.songName.text = songs[indexPath.row].getCleanName()
         
         return cell
