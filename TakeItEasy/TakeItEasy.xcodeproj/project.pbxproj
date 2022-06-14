@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04FEF6132859406600FE9FF5 /* NoteTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEF6122859406600FE9FF5 /* NoteTableView.swift */; };
+		04FEF615285942B400FE9FF5 /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEF614285942B400FE9FF5 /* NoteCell.swift */; };
+		04FEF617285942F200FE9FF5 /* Note.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEF616285942F200FE9FF5 /* Note.swift */; };
+		04FEF6192859433000FE9FF5 /* NoteDBHelp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEF6182859433000FE9FF5 /* NoteDBHelp.swift */; };
+		04FEF61B285946EF00FE9FF5 /* NoteDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FEF61A285946EF00FE9FF5 /* NoteDetailVC.swift */; };
 		7EE4E10A285141C600E0373E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4E109285141C600E0373E /* SearchViewController.swift */; };
 		7EE4E10C285141EA00E0373E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4E10B285141EA00E0373E /* SearchViewModel.swift */; };
 		841EA1912851367600318BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EA1902851367600318BCA /* AppDelegate.swift */; };
@@ -30,6 +35,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04FEF6122859406600FE9FF5 /* NoteTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteTableView.swift; sourceTree = "<group>"; };
+		04FEF614285942B400FE9FF5 /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
+		04FEF616285942F200FE9FF5 /* Note.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Note.swift; sourceTree = "<group>"; };
+		04FEF6182859433000FE9FF5 /* NoteDBHelp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDBHelp.swift; sourceTree = "<group>"; };
+		04FEF61A285946EF00FE9FF5 /* NoteDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteDetailVC.swift; sourceTree = "<group>"; };
 		7EE4E109285141C600E0373E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = TakeItEasy/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		7EE4E10B285141EA00E0373E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = TakeItEasy/SearchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		841EA18D2851367600318BCA /* TakeItEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeItEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +115,11 @@
 				84575D5E2853C43000339A17 /* LoginViewController.swift */,
 				84575D602853C71B00339A17 /* RegisterViewController.swift */,
 				84575D622853C7D400339A17 /* KeyChainManger.swift */,
+				04FEF6122859406600FE9FF5 /* NoteTableView.swift */,
+				04FEF614285942B400FE9FF5 /* NoteCell.swift */,
+				04FEF616285942F200FE9FF5 /* Note.swift */,
+				04FEF6182859433000FE9FF5 /* NoteDBHelp.swift */,
+				04FEF61A285946EF00FE9FF5 /* NoteDetailVC.swift */,
 			);
 			path = TakeItEasy;
 			sourceTree = "<group>";
@@ -224,17 +239,22 @@
 				84575D5F2853C43000339A17 /* LoginViewController.swift in Sources */,
 				84DB6B8B285192AF000813FF /* CookBooksCollectionViewCell.swift in Sources */,
 				84575D672853C86A00339A17 /* User+CoreDataProperties.swift in Sources */,
+				04FEF6132859406600FE9FF5 /* NoteTableView.swift in Sources */,
+				04FEF6192859433000FE9FF5 /* NoteDBHelp.swift in Sources */,
 				7EE4E10C285141EA00E0373E /* SearchViewModel.swift in Sources */,
 				84DB6B8F28523082000813FF /* BookPDFViewController.swift in Sources */,
 				7EE4E10A285141C600E0373E /* SearchViewController.swift in Sources */,
+				04FEF61B285946EF00FE9FF5 /* NoteDetailVC.swift in Sources */,
 				84DB6B892851927A000813FF /* GeneralBooksCollectionViewCell.swift in Sources */,
 				841EA1952851367600318BCA /* ViewController.swift in Sources */,
+				04FEF617285942F200FE9FF5 /* Note.swift in Sources */,
 				841EA1912851367600318BCA /* AppDelegate.swift in Sources */,
 				841EA1932851367600318BCA /* SceneDelegate.swift in Sources */,
 				84575D632853C7D400339A17 /* KeyChainManger.swift in Sources */,
 				841EA19B2851367600318BCA /* TakeItEasy.xcdatamodeld in Sources */,
 				84575D612853C71B00339A17 /* RegisterViewController.swift in Sources */,
 				84DB6B8728514F52000813FF /* BooksViewController.swift in Sources */,
+				04FEF615285942B400FE9FF5 /* NoteCell.swift in Sources */,
 				84DB6B8D285192D9000813FF /* TechnicalBooksCollectionViewCell.swift in Sources */,
 				84575D662853C86A00339A17 /* User+CoreDataClass.swift in Sources */,
 			);
