@@ -8,6 +8,8 @@
 import UIKit
 
 class RegisterViewController: UIViewController {
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var signupButton: UIButton!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     @IBOutlet weak var phoneTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
@@ -20,7 +22,54 @@ class RegisterViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+   
     @IBAction func registerClick(_ sender: Any) {
+        errorLabel.text = "start"
+        let emailPattern = #"^\S+@\S+\.\S+$"#
+        let passwordPattern = #"(?=.{8,})"#
+        let phonePattern = #"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"#
+        var valid = true
+        
+        if fNameTxt.text?.range(of: #"[a-zA-Z]"#,options: .regularExpression) == nil{
+            print("fname fail")
+            valid = false
+        }
+        
+        if lNameTxt.text?.range(of: #"[a-zA-Z]"#,options: .regularExpression) == nil{
+            print("lname fail")
+            valid = false
+        }
+        
+        let phoneResult = phoneTxt.text?.range(
+            of: phonePattern,
+            options: .regularExpression
+        )
+        
+        let emailResult = emailTxt.text?.range(
+            of: emailPattern,
+            options: .regularExpression
+        )
+        
+        
+        let passResult = passwordTxt.text?.range(of: passwordPattern, options: .regularExpression)
+        
+        if(emailResult == nil){
+            print("bad email")
+            valid = false
+        }
+        
+        if(phoneResult == nil){
+            print("bad phone")
+            valid = false
+        }
+        
+        if(passResult == nil){
+            print("bad pass")
+            valid = false
+        }
+        
+        if valid{
+            print("creating")
         createUser(email: emailTxt.text ?? "", fName: fNameTxt.text ?? "", lName: lNameTxt.text ?? "", phoneNumber: phoneTxt.text ?? "")
         
         do {
@@ -30,6 +79,9 @@ class RegisterViewController: UIViewController {
             
         } catch {
             print("failed to save to keychain")
+        }
+        }else {
+            print("bad input")
         }
     }
     

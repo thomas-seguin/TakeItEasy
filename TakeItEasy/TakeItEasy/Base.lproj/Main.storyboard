@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="13O-Kp-GTS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="7Ig-oa-Bx1">
     <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -65,10 +65,16 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="textChange:" destination="syL-dV-5rF" eventType="editingDidBegin" id="krX-yv-8Ob"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O2K-q6-1Fo">
                                 <rect key="frame" x="174" y="494" width="136" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Login"/>
                                 <connections>
@@ -108,6 +114,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTxt" destination="vJo-Oc-vs9" id="en3-Dc-cSm"/>
+                        <outlet property="loginButton" destination="O2K-q6-1Fo" id="mRl-qs-a2b"/>
                         <outlet property="passTxt" destination="vwa-y8-nmx" id="BD0-II-ATI"/>
                         <outlet property="rememberSwitch" destination="jrv-9O-C6p" id="eCT-HB-9sk"/>
                         <outlet property="test" destination="YXe-Lc-xQ0" id="0N3-yS-JVe"/>
@@ -169,18 +176,30 @@
                                 <rect key="frame" x="72" y="491" width="307" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <connections>
+                                    <action selector="textChange:" destination="7Ig-oa-Bx1" eventType="editingDidEnd" id="Z8e-Ug-1Hh"/>
+                                </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8X-ah-SvZ">
+                                <rect key="frame" x="157" y="199" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1rl-Nf-jMk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
                         <outlet property="emailTxt" destination="lxw-Ot-UJL" id="aBf-FI-IIn"/>
+                        <outlet property="errorLabel" destination="K8X-ah-SvZ" id="jhd-up-9ts"/>
                         <outlet property="fNameTxt" destination="2gA-Hs-WMY" id="QuA-54-XV7"/>
                         <outlet property="lNameTxt" destination="1at-Lb-RNG" id="KC7-Qq-6zj"/>
                         <outlet property="passwordTxt" destination="iUO-pJ-CCi" id="K6y-Xa-11A"/>
                         <outlet property="phoneTxt" destination="xeg-ou-llI" id="Vvm-EV-QKh"/>
+                        <outlet property="signupButton" destination="V2M-qd-w1b" id="Z8u-b6-Ot7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JW1-OD-9j7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
