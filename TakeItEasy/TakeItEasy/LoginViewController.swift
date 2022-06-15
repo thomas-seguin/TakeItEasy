@@ -9,10 +9,12 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var test: UILabel!
     @IBOutlet weak var rememberSwitch: UISwitch!
     @IBOutlet weak var passTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
+    let userDefaults = UserDefaults()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +23,11 @@ class LoginViewController: UIViewController {
     
 
     
+    @IBAction func textChange(_ sender: Any) {
+        if emailTxt.text != nil{
+            loginButton.isEnabled = true
+        }
+    }
     @IBAction func loginClick(_ sender: Any) {
         
         let email = emailTxt.text ?? "test"
@@ -33,6 +40,14 @@ class LoginViewController: UIViewController {
         let password = String(decoding: data, as: UTF8.self)
         if(password == pass){
             test.text = "logged in"
+            
+            if rememberSwitch.isOn{
+                
+                userDefaults.set(true, forKey: "remember")
+            } else {
+               
+                userDefaults.set(false, forKey: "remember")
+            }
             
             print("logged in")
            

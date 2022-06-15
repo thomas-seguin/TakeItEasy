@@ -12,5 +12,4 @@ class UserSingleton{
     private init(){
         
     }
-    
 }
