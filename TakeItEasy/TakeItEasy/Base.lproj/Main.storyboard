@@ -363,6 +363,14 @@
                                     <action selector="startRecording:" destination="fds-pQ-OGw" eventType="touchUpInside" id="WvV-0v-1nN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXE-e4-gwv">
+                                <rect key="frame" x="172" y="747" width="85" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logout">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="18"/>
+                                </buttonConfiguration>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Agm-cK-eTC"/>
                         <color key="backgroundColor" systemColor="systemGray6Color"/>
