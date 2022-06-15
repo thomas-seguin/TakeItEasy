@@ -7,11 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		256DD8262858D7CE000FD8CB /* MusicStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD8252858D7CE000FD8CB /* MusicStreamingViewController.swift */; };
+		256DD8282858D7E9000FD8CB /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD8272858D7E9000FD8CB /* SongsCollectionViewCell.swift */; };
+		256DD82A2858D801000FD8CB /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD8292858D801000FD8CB /* Song.swift */; };
+		256DD82C2858D80C000FD8CB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD82B2858D80C000FD8CB /* Player.swift */; };
 		7ECAEC9828570C2A00AC3B11 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAEC9728570C2A00AC3B11 /* UserSingleton.swift */; };
 		7ECAEC9A28570C6200AC3B11 /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAEC9928570C6200AC3B11 /* APIModels.swift */; };
 		7ECAEC9C28570CB900AC3B11 /* MusicSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAEC9B28570CB900AC3B11 /* MusicSearchManager.swift */; };
 		7EE4E10A285141C600E0373E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4E109285141C600E0373E /* SearchViewController.swift */; };
 		7EE4E10C285141EA00E0373E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4E10B285141EA00E0373E /* SearchViewModel.swift */; };
+		7EE644072859371A00AE353C /* QuizModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE644062859371A00AE353C /* QuizModels.swift */; };
+		7EE64409285937D000AE353C /* QuizDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE64408285937D000AE353C /* QuizDBHelper.swift */; };
+		7EE6440B28593B0E00AE353C /* QuizPopulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE6440A28593B0E00AE353C /* QuizPopulator.swift */; };
+		7EE6440D28593D8700AE353C /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE6440C28593D8700AE353C /* QuizViewController.swift */; };
 		841EA1912851367600318BCA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EA1902851367600318BCA /* AppDelegate.swift */; };
 		841EA1932851367600318BCA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EA1922851367600318BCA /* SceneDelegate.swift */; };
 		841EA1952851367600318BCA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841EA1942851367600318BCA /* ViewController.swift */; };
@@ -33,11 +41,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		256DD8252858D7CE000FD8CB /* MusicStreamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStreamingViewController.swift; sourceTree = "<group>"; };
+		256DD8272858D7E9000FD8CB /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
+		256DD8292858D801000FD8CB /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		256DD82B2858D80C000FD8CB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		7ECAEC9728570C2A00AC3B11 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
 		7ECAEC9928570C6200AC3B11 /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
 		7ECAEC9B28570CB900AC3B11 /* MusicSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchManager.swift; sourceTree = "<group>"; };
 		7EE4E109285141C600E0373E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = TakeItEasy/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		7EE4E10B285141EA00E0373E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = TakeItEasy/SearchViewModel.swift; sourceTree = SOURCE_ROOT; };
+		7EE644062859371A00AE353C /* QuizModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModels.swift; sourceTree = "<group>"; };
+		7EE64408285937D000AE353C /* QuizDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDBHelper.swift; sourceTree = "<group>"; };
+		7EE6440A28593B0E00AE353C /* QuizPopulator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizPopulator.swift; sourceTree = "<group>"; };
+		7EE6440C28593D8700AE353C /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		841EA18D2851367600318BCA /* TakeItEasy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TakeItEasy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		841EA1902851367600318BCA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		841EA1922851367600318BCA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +87,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		256DD8242858D79E000FD8CB /* Music */ = {
+			isa = PBXGroup;
+			children = (
+				256DD8252858D7CE000FD8CB /* MusicStreamingViewController.swift */,
+				256DD8272858D7E9000FD8CB /* SongsCollectionViewCell.swift */,
+				256DD8292858D801000FD8CB /* Song.swift */,
+				256DD82B2858D80C000FD8CB /* Player.swift */,
+			);
+			path = Music;
+			sourceTree = "<group>";
+		};
+		7EE64405285936B400AE353C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7EE6440A28593B0E00AE353C /* QuizPopulator.swift */,
+				7EE64408285937D000AE353C /* QuizDBHelper.swift */,
+				7ECAEC9B28570CB900AC3B11 /* MusicSearchManager.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		841EA1842851367600318BCA = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +127,8 @@
 		841EA18F2851367600318BCA /* TakeItEasy */ = {
 			isa = PBXGroup;
 			children = (
+				7EE64405285936B400AE353C /* Helpers */,
+				256DD8242858D79E000FD8CB /* Music */,
 				84575D682853C9A000339A17 /* UserModel */,
 				84DB6B9228523FC3000813FF /* BooksPDFs */,
 				841EA1A92851373E00318BCA /* Controllers */,
@@ -119,6 +158,7 @@
 		841EA1A7285136BD00318BCA /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7EE644062859371A00AE353C /* QuizModels.swift */,
 				7ECAEC9928570C6200AC3B11 /* APIModels.swift */,
 			);
 			path = Models;
@@ -128,7 +168,6 @@
 			isa = PBXGroup;
 			children = (
 				7EE4E10B285141EA00E0373E /* SearchViewModel.swift */,
-				7ECAEC9B28570CB900AC3B11 /* MusicSearchManager.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -137,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				7EE4E109285141C600E0373E /* SearchViewController.swift */,
+				7EE6440C28593D8700AE353C /* QuizViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -234,19 +274,27 @@
 				84575D5F2853C43000339A17 /* LoginViewController.swift in Sources */,
 				84DB6B8B285192AF000813FF /* CookBooksCollectionViewCell.swift in Sources */,
 				84575D672853C86A00339A17 /* User+CoreDataProperties.swift in Sources */,
+				256DD82C2858D80C000FD8CB /* Player.swift in Sources */,
 				7ECAEC9828570C2A00AC3B11 /* UserSingleton.swift in Sources */,
 				7ECAEC9C28570CB900AC3B11 /* MusicSearchManager.swift in Sources */,
 				7EE4E10C285141EA00E0373E /* SearchViewModel.swift in Sources */,
+				7EE644072859371A00AE353C /* QuizModels.swift in Sources */,
+				7EE6440B28593B0E00AE353C /* QuizPopulator.swift in Sources */,
 				84DB6B8F28523082000813FF /* BookPDFViewController.swift in Sources */,
 				7EE4E10A285141C600E0373E /* SearchViewController.swift in Sources */,
 				84DB6B892851927A000813FF /* GeneralBooksCollectionViewCell.swift in Sources */,
 				841EA1952851367600318BCA /* ViewController.swift in Sources */,
+				256DD8262858D7CE000FD8CB /* MusicStreamingViewController.swift in Sources */,
+				7EE64409285937D000AE353C /* QuizDBHelper.swift in Sources */,
 				841EA1912851367600318BCA /* AppDelegate.swift in Sources */,
 				841EA1932851367600318BCA /* SceneDelegate.swift in Sources */,
+				256DD8282858D7E9000FD8CB /* SongsCollectionViewCell.swift in Sources */,
 				84575D632853C7D400339A17 /* KeyChainManger.swift in Sources */,
+				256DD82A2858D801000FD8CB /* Song.swift in Sources */,
 				841EA19B2851367600318BCA /* TakeItEasy.xcdatamodeld in Sources */,
 				84575D612853C71B00339A17 /* RegisterViewController.swift in Sources */,
 				84DB6B8728514F52000813FF /* BooksViewController.swift in Sources */,
+				7EE6440D28593D8700AE353C /* QuizViewController.swift in Sources */,
 				84DB6B8D285192D9000813FF /* TechnicalBooksCollectionViewCell.swift in Sources */,
 				84575D662853C86A00339A17 /* User+CoreDataClass.swift in Sources */,
 			);
@@ -324,7 +372,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -378,7 +426,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
