@@ -14,11 +14,12 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var generalBooksCollection: UICollectionView!
     @IBOutlet weak var technicalBooksCollection: UICollectionView!
     @IBOutlet weak var cookBooksCollection: UICollectionView!
-    var books = ["bookSample"]
+   
+    
     var filteredBooks = [Books]()
     var isSearchingBook = false
-    
     var allBooksCollection = [Books]()
+    
     var cookBooks = [Books]()
     var generalBooks = [Books]()
     var technicalBooks = [Books]()
@@ -50,8 +51,7 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if isSearchingBook {
             return filteredBooks.count
-        }
-        if collectionView == cookBooksCollection{
+        }else if collectionView == cookBooksCollection{
             return cookBooks.count
         }else if collectionView == technicalBooksCollection{
             return technicalBooks.count
@@ -69,18 +69,23 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
             bookCell.backgroundColor = UIColor.yellow
             return bookCell
         }
-        /*
-        if isSearchingBook {
-            /*
-            let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookSearchCell", for: indexPath)
-            bookCell.backgroundColor = UIColor.yellow
-            return bookCell
-             */
-           // return cell(cellIdentifier: "bookSearchCell")
-        }
-        */
         
-        if collectionView == generalBooksCollection {
+        if collectionView == searchBooksCollection {
+            let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookSearchCell", for: indexPath) as! BookSearchCollectionViewCell
+            
+            let imgUrl = filteredBooks[indexPath.row].volumeInfo.imageLinks.thumbnail
+            if let imageUrl = URL(string: imgUrl){
+                do{
+                    let data = try Data(contentsOf: imageUrl)
+                    bookCell.imageBackground.image = UIImage(data: data)
+                }catch{
+                    print("Error loading image")
+                }
+            }
+            return bookCell
+             
+        
+        }else if collectionView == generalBooksCollection {
             
             let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalBookCell", for: indexPath) as! GeneralBooksCollectionViewCell
             
@@ -118,7 +123,7 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
             
             //return cell(cellIdentifier: "technicalBookCell") as! TechnicalBooksCollectionViewCell
         }
-        else if collectionView == cookBooksCollection{
+        else /*if collectionView == cookBooksCollection*/{
             
             let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cookBookCell", for: indexPath) as! CookBooksCollectionViewCell
             //--------------------------------------------------------------------------------
@@ -132,25 +137,20 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
                 }
                 
             }
-            //--------------------------------------------------------------------------------
-            
-            //bookCell.title.text = cookBooks[indexPath.row].volumeInfo.title
-            //bookCell.author.text = cookBooks[indexPath.row].volumeInfo.authors[0]
-            //bookCell.bookDescription.text = cookBooks[indexPath.row].volumeInfo.description
-            //bookCell.backgroundColor = .white
-            return bookCell
-             
-           // return cell(cellIdentifier: "cookBookCell") as! CookBooksCollectionViewCell
 
-        }else{
-            return cell(cellIdentifier: "bookSearchCell")
-        }
+            return bookCell
+
+        }/*else{
+            return cell(cellIdentifier: "bookSearchCell") as! BookSearchCollectionViewCell
+        }*/
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyObject = UIStoryboard(name: "Main", bundle: nil)
         let bookPDFController = storyObject.instantiateViewController(withIdentifier: "bookPDF") as! BookPDFViewController
-        if collectionView == generalBooksCollection{
+        if isSearchingBook {
+            bookPDFController.bookName = filteredBooks[indexPath.row].volumeInfo.previewLink
+        }else if collectionView == generalBooksCollection{
             bookPDFController.bookName = generalBooks[indexPath.row].volumeInfo.previewLink
         }else if (collectionView == technicalBooksCollection) {
             bookPDFController.bookName = technicalBooks[indexPath.row].volumeInfo.previewLink
@@ -208,19 +208,38 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
 // Implements search bar and display content of the search
 extension BooksViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if !searchText.isEmpty{
-            filteredBooks = allBooksCollection.filter({$0.volumeInfo.title.lowercased().prefix(searchText.count) == searchText.lowercased()})
-            print("<------- Searched title ------->", filteredBooks[0].volumeInfo.title)
-            //isSearchingBook = true
-            ///searchBooksCollection.isHidden = false
-
-            //self.searchBooksCollection.reloadData()
-            
-        }else{
-            isSearchingBook = true
-            //searchBooksCollection.isHidden = false
+        filteredBooks = searchText.isEmpty ? allBooksCollection : allBooksCollection.filter({$0.volumeInfo.title.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        
+        self.searchBooksCollection.isHidden = false
+        
+        self.generalBooksCollection.isHidden = true
+        self.generalBooksCollection.reloadData()
+        
+        self.cookBooksCollection.isHidden = true
+        self.cookBooksCollection.reloadData()
+        
+        self.technicalBooksCollection.isHidden = true
+        self.technicalBooksCollection.reloadData()
+        
+        isSearchingBook = true
+        self.searchBooksCollection.reloadData()
+        
         }
-        isSearchingBook = false
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.searchBooksCollection.isHidden = true
+        
+        self.generalBooksCollection.isHidden = false
+        self.generalBooksCollection.reloadData()
+        
+        self.cookBooksCollection.isHidden = false
+        self.cookBooksCollection.reloadData()
+        
+        self.technicalBooksCollection.isHidden = false
+        self.technicalBooksCollection.reloadData()
+        
+        self.searchBooksCollection.reloadData()
+        searchBar.resignFirstResponder()
     }
 }
 
