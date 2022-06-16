@@ -11,9 +11,11 @@
 		256DD8282858D7E9000FD8CB /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD8272858D7E9000FD8CB /* SongsCollectionViewCell.swift */; };
 		256DD82A2858D801000FD8CB /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD8292858D801000FD8CB /* Song.swift */; };
 		256DD82C2858D80C000FD8CB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD82B2858D80C000FD8CB /* Player.swift */; };
+		7E8B92AA285A78CB002A6DB7 /* QuizViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8B92A9285A78CB002A6DB7 /* QuizViewModel.swift */; };
 		7ECAEC9828570C2A00AC3B11 /* UserSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAEC9728570C2A00AC3B11 /* UserSingleton.swift */; };
 		7ECAEC9A28570C6200AC3B11 /* APIModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAEC9928570C6200AC3B11 /* APIModels.swift */; };
 		7ECAEC9C28570CB900AC3B11 /* MusicSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ECAEC9B28570CB900AC3B11 /* MusicSearchManager.swift */; };
+		7EE0BE0F285B885F004599CD /* QuizCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE0BE0E285B885F004599CD /* QuizCollectionViewCell.swift */; };
 		7EE4E10A285141C600E0373E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4E109285141C600E0373E /* SearchViewController.swift */; };
 		7EE4E10C285141EA00E0373E /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE4E10B285141EA00E0373E /* SearchViewModel.swift */; };
 		7EE644072859371A00AE353C /* QuizModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EE644062859371A00AE353C /* QuizModels.swift */; };
@@ -45,9 +47,11 @@
 		256DD8272858D7E9000FD8CB /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
 		256DD8292858D801000FD8CB /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		256DD82B2858D80C000FD8CB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		7E8B92A9285A78CB002A6DB7 /* QuizViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewModel.swift; sourceTree = "<group>"; };
 		7ECAEC9728570C2A00AC3B11 /* UserSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSingleton.swift; sourceTree = "<group>"; };
 		7ECAEC9928570C6200AC3B11 /* APIModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModels.swift; sourceTree = "<group>"; };
 		7ECAEC9B28570CB900AC3B11 /* MusicSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicSearchManager.swift; sourceTree = "<group>"; };
+		7EE0BE0E285B885F004599CD /* QuizCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCollectionViewCell.swift; sourceTree = "<group>"; };
 		7EE4E109285141C600E0373E /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = TakeItEasy/SearchViewController.swift; sourceTree = SOURCE_ROOT; };
 		7EE4E10B285141EA00E0373E /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SearchViewModel.swift; path = TakeItEasy/SearchViewModel.swift; sourceTree = SOURCE_ROOT; };
 		7EE644062859371A00AE353C /* QuizModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizModels.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				7EE4E10B285141EA00E0373E /* SearchViewModel.swift */,
+				7E8B92A9285A78CB002A6DB7 /* QuizViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -177,6 +182,7 @@
 			children = (
 				7EE4E109285141C600E0373E /* SearchViewController.swift */,
 				7EE6440C28593D8700AE353C /* QuizViewController.swift */,
+				7EE0BE0E285B885F004599CD /* QuizCollectionViewCell.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -270,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EE0BE0F285B885F004599CD /* QuizCollectionViewCell.swift in Sources */,
 				7ECAEC9A28570C6200AC3B11 /* APIModels.swift in Sources */,
 				84575D5F2853C43000339A17 /* LoginViewController.swift in Sources */,
 				84DB6B8B285192AF000813FF /* CookBooksCollectionViewCell.swift in Sources */,
@@ -293,6 +300,7 @@
 				256DD82A2858D801000FD8CB /* Song.swift in Sources */,
 				841EA19B2851367600318BCA /* TakeItEasy.xcdatamodeld in Sources */,
 				84575D612853C71B00339A17 /* RegisterViewController.swift in Sources */,
+				7E8B92AA285A78CB002A6DB7 /* QuizViewModel.swift in Sources */,
 				84DB6B8728514F52000813FF /* BooksViewController.swift in Sources */,
 				7EE6440D28593D8700AE353C /* QuizViewController.swift in Sources */,
 				84DB6B8D285192D9000813FF /* TechnicalBooksCollectionViewCell.swift in Sources */,
