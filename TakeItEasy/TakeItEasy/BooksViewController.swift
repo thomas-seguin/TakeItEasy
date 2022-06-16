@@ -14,11 +14,11 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var generalBooksCollection: UICollectionView!
     @IBOutlet weak var technicalBooksCollection: UICollectionView!
     @IBOutlet weak var cookBooksCollection: UICollectionView!
-    
     var books = ["bookSample"]
-    var filteredBooks = [String]()
+    var filteredBooks = [Books]()
     var isSearchingBook = false
     
+    var allBooksCollection = [Books]()
     var cookBooks = [Books]()
     var generalBooks = [Books]()
     var technicalBooks = [Books]()
@@ -38,21 +38,11 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
             }
         }
         
-        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=allbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 0){
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=all+bookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 0){
             DispatchQueue.main.async{
                 self.generalBooksCollection.reloadData()
             }
         }
-        
-        
-        /*
-        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=generalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 0){
-            DispatchQueue.main.async {
-                self.generalBooksCollection.reloadData()
-                
-            }
-        }
-        */
 
     }
 
@@ -171,60 +161,7 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
         navigationController?.pushViewController(bookPDFController, animated: true)
     }
-    
-    func fetchBooks(booksCompletionHandler: @escaping (/*[Books]*/) -> ()){
-        //let urlString = "https://www.google.com/search?cook+books" //trial
-       /* let urlString = "https://books.google.com/books?uid=110997512389116888553&as_coll=1001&source=gbs_lp_bookshelf_list&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY" //book shelf */
-        let urlString = "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY" // works
-        let technicalsString = "https://www.googleapis.com/books/v1/volumes?q=technicalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY" //works
-        let generalsString = "https://www.googleapis.com/books/v1/volumes?q=generalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY" //works
-    
-        /*
-        bookUrlDecoder(aUrlString: generalsString, count: 0){
-            //self.generalBooksCollection.reloadData()
-        }
-        bookUrlDecoder(aUrlString: technicalsString, count: 1){
-            //self.technicalBooksCollection.reloadData()
-        }
-        bookUrlDecoder(aUrlString: urlString, count: 2){
-            //self.cookBooksCollection.reloadData()
-        }
-        
-        booksCompletionHandler()
-        */
-        
-        
-        
-        let fetchURL = URL(string: urlString)
-        
-        guard fetchURL != nil else{
-            print("Error ---> fetching Books Url")
-            return
-        }
-        let bookDataTask = URLSession.shared.dataTask(with: fetchURL!){data, response, error in
-            guard let data = data else {
-                print("Data is nil")
-                return
-            }
-            do{
-                let decodedBooks = try JSONDecoder().decode(BooksApi.self, from: data)
-                for book in decodedBooks.items {
-                    if !book.volumeInfo.previewLink.isEmpty{
-                        //self.cookBooks.append(book)
-                        self.cookBooks.append(book)
 
-                        }
-                }
-                booksCompletionHandler(/*decodedBooks.items*/) //(decodedBooks)
-            }catch{
-                print("Error ---> Decoding books")
-            }
-        }
-        bookDataTask.resume()
-        
-        
-    }
-    
     //--------------------------------------------------------------------------------------------------------------------------------------
     func bookUrlDecoder(aUrlString: String, count: Int, completion: @escaping () -> ()){
 
@@ -246,10 +183,13 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
                         switch count {
                         case 0:
                             self.generalBooks.append(book)
+                            self.allBooksCollection.append(book)
                         case 1:
                             self.technicalBooks.append(book)
+                            self.allBooksCollection.append(book)
                         case 2:
                             self.cookBooks.append(book)
+                            self.allBooksCollection.append(book)
                         default:
                             print("None of the counts")
                         }
@@ -269,8 +209,9 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
 extension BooksViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if !searchText.isEmpty{
-            filteredBooks = books.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
-            isSearchingBook = true
+            filteredBooks = allBooksCollection.filter({$0.volumeInfo.title.lowercased().prefix(searchText.count) == searchText.lowercased()})
+            print("<------- Searched title ------->", filteredBooks[0].volumeInfo.title)
+            //isSearchingBook = true
             ///searchBooksCollection.isHidden = false
 
             //self.searchBooksCollection.reloadData()
