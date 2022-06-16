@@ -28,19 +28,17 @@ class QuizViewModel{
         searchedQuizzes = quizzes
     }
     
-    func getSearchedQuizzes(searchText : String) -> [Quiz]{
+    func getSearchedQuizzes(searchText : String){
         if(searchText == ""){
             searchedQuizzes = quizzes
-            return searchedQuizzes
         }
         else{
             searchedQuizzes.removeAll()
             for quiz in quizzes {
-                if(quiz.quizName?.lowercased() == searchText.lowercased()){
+                if(quiz.quizName!.lowercased().contains(searchText.lowercased())){
                     searchedQuizzes.append(quiz)
                 }
             }
-            return searchedQuizzes
         }
     }
     

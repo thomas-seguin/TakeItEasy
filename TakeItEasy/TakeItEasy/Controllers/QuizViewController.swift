@@ -11,6 +11,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     //Username and Logout Bar
     @IBOutlet weak var customBar: UINavigationBar!
+    @IBOutlet weak var myCollectionView: UICollectionView!
     var newQuizViewModel = QuizViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,12 +19,12 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
  
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return newQuizViewModel.quizzes.count
+        return newQuizViewModel.searchedQuizzes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! QuizCollectionViewCell
-        cell.quizLabel.text = newQuizViewModel.quizzes[indexPath.count].quizName
+        cell.quizLabel.text = newQuizViewModel.searchedQuizzes[indexPath.row].quizName
         cell.backgroundColor = UIColor.purple
         cell.layer.borderColor = CGColor(red: 100, green: 0, blue: 255, alpha: 1)
         cell.layer.cornerRadius = 10.0
@@ -32,7 +33,20 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        newQuizViewModel.getSearchedQuizzes(searchText: searchText)
+        myCollectionView.reloadData()
+    }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let questionaire = storyboard.instantiateViewController(withIdentifier: "Questionaire") as! QuestionaireViewController
+        let obj = QuestionaireViewModel(q : newQuizViewModel.searchedQuizzes[indexPath.row])
+        //obj.quiz = newQuizViewModel.searchedQuizzes[indexPath.row]
+        questionaire.newQuestionaireViewModel = obj
+        print(newQuizViewModel.searchedQuizzes[indexPath.row].quizName!)
+        present(questionaire, animated: true)
+    }
     
 //MARK: For Testing purposes
     func testingQuestionaires(){
