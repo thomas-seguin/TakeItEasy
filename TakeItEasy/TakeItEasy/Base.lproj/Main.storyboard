@@ -71,10 +71,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="138" height="174"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="book2-1" translatesAutoresizingMaskIntoConstraints="NO" id="DqR-em-UL1">
-                                                    <rect key="frame" x="0.0" y="-11.666666666666666" width="152" height="198"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7oe-he-5OM">
                                                     <rect key="frame" x="48" y="64" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -89,11 +85,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DqR-em-UL1">
+                                                    <rect key="frame" x="0.0" y="-11.666666666666666" width="152" height="198"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="138" height="174"/>
                                         <connections>
                                             <outlet property="author" destination="093-zi-Ik4" id="CeW-NF-MWY"/>
+                                            <outlet property="imageBackground" destination="DqR-em-UL1" id="Z0h-f7-mtK"/>
                                             <outlet property="title" destination="7oe-he-5OM" id="MPu-HG-zg5"/>
                                         </connections>
                                     </collectionViewCell>
@@ -135,10 +136,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="138" height="174"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="book2-1" translatesAutoresizingMaskIntoConstraints="NO" id="kGa-re-NSb">
-                                                    <rect key="frame" x="0.0" y="-12" width="149" height="203"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grY-Y9-Zj7">
                                                     <rect key="frame" x="48" y="37" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -153,11 +150,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kGa-re-NSb">
+                                                    <rect key="frame" x="0.0" y="-12" width="149" height="203"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="138" height="174"/>
                                         <connections>
                                             <outlet property="author" destination="grY-Y9-Zj7" id="UWx-aq-OQw"/>
+                                            <outlet property="imageBackground" destination="kGa-re-NSb" id="ttu-bE-I1H"/>
                                             <outlet property="title" destination="rOH-iw-fqy" id="n1b-7n-IhB"/>
                                         </connections>
                                     </collectionViewCell>
@@ -308,7 +310,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="book2-1" width="612" height="792"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -27,39 +27,32 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        let urlStrings = [
-                         "https://www.googleapis.com/books/v1/volumes?q=generalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY",
-                         "https://www.googleapis.com/books/v1/volumes?q=technicalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY",
-                         "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY"
-                                                  
-                         ]
-        var categoriesArray = [generalBooks, technicalBooks, cookBooks]
-        var categoryIndex = 0
-        for aUrl in urlStrings{
-            fetchBooks(aUrl){ data in
-                //print(data)
-                //categoriesArray[categoryIndex] = data
-                DispatchQueue.main.async {
-                    self.generalBooksCollection.reloadData()
-                    self.technicalBooksCollection.reloadData()
-                    self.cookBooksCollection.reloadData()
-                }
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 2){
+            DispatchQueue.main.async{
+                self.cookBooksCollection.reloadData()
             }
-            categoryIndex += 1
+        }
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=technicalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 1){
+            DispatchQueue.main.async{
+                self.technicalBooksCollection.reloadData()
+            }
+        }
         
-        }*/
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=allbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 0){
+            DispatchQueue.main.async{
+                self.generalBooksCollection.reloadData()
+            }
+        }
         
         
-        fetchBooks(){/*data in*/
-             DispatchQueue.main.async {
-                 self.generalBooksCollection.reloadData()
-                 self.technicalBooksCollection.reloadData()
-                 self.cookBooksCollection.reloadData()
-             }
-         }
-         
-
+        /*
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=generalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 0){
+            DispatchQueue.main.async {
+                self.generalBooksCollection.reloadData()
+                
+            }
+        }
+        */
 
     }
 
@@ -70,42 +63,70 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
         if collectionView == cookBooksCollection{
             return cookBooks.count
+        }else if collectionView == technicalBooksCollection{
+            return technicalBooks.count
+        }else if collectionView == generalBooksCollection{
+            return generalBooks.count
         }
-        return 20
+        return 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
         func cell(cellIdentifier: String) -> UICollectionViewCell {
             let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
             bookCell.backgroundColor = UIColor.yellow
             return bookCell
         }
-        
+        /*
         if isSearchingBook {
             /*
             let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookSearchCell", for: indexPath)
             bookCell.backgroundColor = UIColor.yellow
             return bookCell
              */
-            return cell(cellIdentifier: "bookSearchCell")
+           // return cell(cellIdentifier: "bookSearchCell")
         }
-
+        */
         
         if collectionView == generalBooksCollection {
-            /*
+            
             let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalBookCell", for: indexPath) as! GeneralBooksCollectionViewCell
-            bookCell.backgroundColor = UIColor.yellow
+            
+            let imgUrl = generalBooks[indexPath.row].volumeInfo.imageLinks.thumbnail
+            if let imageUrl = URL(string: imgUrl){
+                do{
+                    let data = try Data(contentsOf: imageUrl)
+                    bookCell.imageBackground.image = UIImage(data: data)
+                }catch{
+                    print("Error loading image")
+                }
+                
+            }
+
+            
             return bookCell
-            */
-            return cell(cellIdentifier: "generalBookCell") as! GeneralBooksCollectionViewCell
+            
+            //return cell(cellIdentifier: "generalBookCell") as! GeneralBooksCollectionViewCell
         }
         else if collectionView == technicalBooksCollection {
-            /*
+            
             let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "technicalBookCell", for: indexPath) as! TechnicalBooksCollectionViewCell
-            bookCell.backgroundColor = UIColor.yellow
+            
+            let imgUrl = technicalBooks[indexPath.row].volumeInfo.imageLinks.thumbnail
+            if let imageUrl = URL(string: imgUrl){
+                do{
+                    let data = try Data(contentsOf: imageUrl)
+                    bookCell.imageBackground.image = UIImage(data: data)
+                }catch{
+                    print("Error loading image")
+                }
+                
+            }
             return bookCell
-            */
-            return cell(cellIdentifier: "technicalBookCell") as! TechnicalBooksCollectionViewCell
+            
+            //return cell(cellIdentifier: "technicalBookCell") as! TechnicalBooksCollectionViewCell
         }
         else if collectionView == cookBooksCollection{
             
@@ -117,7 +138,7 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
                     let data = try Data(contentsOf: imageUrl)
                     bookCell.imageBackground.image = UIImage(data: data)
                 }catch{
-                    print("Error loading imagage")
+                    print("Error loading image")
                 }
                 
             }
@@ -140,9 +161,9 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
         let storyObject = UIStoryboard(name: "Main", bundle: nil)
         let bookPDFController = storyObject.instantiateViewController(withIdentifier: "bookPDF") as! BookPDFViewController
         if collectionView == generalBooksCollection{
-            bookPDFController.bookName = "bookSample"
+            bookPDFController.bookName = generalBooks[indexPath.row].volumeInfo.previewLink
         }else if (collectionView == technicalBooksCollection) {
-            bookPDFController.bookName = "bookSample"
+            bookPDFController.bookName = technicalBooks[indexPath.row].volumeInfo.previewLink
         } else{
             bookPDFController.bookName = cookBooks[indexPath.row].volumeInfo.previewLink
             
@@ -160,13 +181,13 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     
         /*
         bookUrlDecoder(aUrlString: generalsString, count: 0){
-            self.generalBooksCollection.reloadData()
+            //self.generalBooksCollection.reloadData()
         }
         bookUrlDecoder(aUrlString: technicalsString, count: 1){
-            self.technicalBooksCollection.reloadData()
+            //self.technicalBooksCollection.reloadData()
         }
         bookUrlDecoder(aUrlString: urlString, count: 2){
-            self.cookBooksCollection.reloadData()
+            //self.cookBooksCollection.reloadData()
         }
         
         booksCompletionHandler()
@@ -205,7 +226,7 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     //--------------------------------------------------------------------------------------------------------------------------------------
-    func bookUrlDecoder(aUrlString: String, count: Int, completion: @escaping (/*[Books]*/) -> ()){
+    func bookUrlDecoder(aUrlString: String, count: Int, completion: @escaping () -> ()){
 
         let fetchURL = URL(string: aUrlString)
         
@@ -222,23 +243,20 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
                 let decodedBooks = try JSONDecoder().decode(BooksApi.self, from: data)
                 for book in decodedBooks.items {
                     if !book.volumeInfo.previewLink.isEmpty{
-                        //self.cookBooks.append(book)
                         switch count {
                         case 0:
                             self.generalBooks.append(book)
-                            completion()
                         case 1:
                             self.technicalBooks.append(book)
-                            completion()
                         case 2:
                             self.cookBooks.append(book)
-                            completion()
                         default:
                             print("None of the counts")
                         }
 
                         }
                 }
+                completion()
             }catch{
                 print("Error ---> Decoding books")
             }
