@@ -18,21 +18,48 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     var books = ["bookSample"]
     var filteredBooks = [String]()
     var isSearchingBook = false
+    
     var cookBooks = [Books]()
-    var generalBooks, technicalBooks: [Books]?
+    var generalBooks = [Books]()
+    var technicalBooks = [Books]()
     
     var allBooks = [Books]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        fetchBooks(){data in
-            //print(data)
-            DispatchQueue.main.async {
-                self.generalBooksCollection.reloadData()
-                self.technicalBooksCollection.reloadData()
-                self.cookBooksCollection.reloadData()
+        /*
+        let urlStrings = [
+                         "https://www.googleapis.com/books/v1/volumes?q=generalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY",
+                         "https://www.googleapis.com/books/v1/volumes?q=technicalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY",
+                         "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY"
+                                                  
+                         ]
+        var categoriesArray = [generalBooks, technicalBooks, cookBooks]
+        var categoryIndex = 0
+        for aUrl in urlStrings{
+            fetchBooks(aUrl){ data in
+                //print(data)
+                //categoriesArray[categoryIndex] = data
+                DispatchQueue.main.async {
+                    self.generalBooksCollection.reloadData()
+                    self.technicalBooksCollection.reloadData()
+                    self.cookBooksCollection.reloadData()
+                }
             }
-        }
+            categoryIndex += 1
+        
+        }*/
+        
+        
+        fetchBooks(){/*data in*/
+             DispatchQueue.main.async {
+                 self.generalBooksCollection.reloadData()
+                 self.technicalBooksCollection.reloadData()
+                 self.cookBooksCollection.reloadData()
+             }
+         }
+         
+
 
     }
 
@@ -83,19 +110,23 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
         else if collectionView == cookBooksCollection{
             
             let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cookBookCell", for: indexPath) as! CookBooksCollectionViewCell
-            /*let imgUrl = cookBooks[indexPath.row].volumeInfo.imageLinks.thumbnail
+            //--------------------------------------------------------------------------------
+            let imgUrl = cookBooks[indexPath.row].volumeInfo.imageLinks.thumbnail
             if let imageUrl = URL(string: imgUrl){
                 do{
                     let data = try Data(contentsOf: imageUrl)
                     bookCell.imageBackground.image = UIImage(data: data)
                 }catch{
-                    print("Error loading image")
+                    print("Error loading imagage")
                 }
                 
-            }*/
-            bookCell.title.text = cookBooks[indexPath.row].volumeInfo.title
-            bookCell.author.text = cookBooks[indexPath.row].volumeInfo.authors[0]
-            bookCell.backgroundColor = .white
+            }
+            //--------------------------------------------------------------------------------
+            
+            //bookCell.title.text = cookBooks[indexPath.row].volumeInfo.title
+            //bookCell.author.text = cookBooks[indexPath.row].volumeInfo.authors[0]
+            //bookCell.bookDescription.text = cookBooks[indexPath.row].volumeInfo.description
+            //bookCell.backgroundColor = .white
             return bookCell
              
            // return cell(cellIdentifier: "cookBookCell") as! CookBooksCollectionViewCell
@@ -120,19 +151,35 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
         navigationController?.pushViewController(bookPDFController, animated: true)
     }
     
-    func fetchBooks(booksCompletionHandler: @escaping (BooksApi) -> ()){
-       // let urlString = "https://books.google.com/books?uid=110997512389116888553&as_coll=1001&source=gbs_lp_bookshelf_list&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY" //book shelf
-        //"https://www.googleapis.com/books/v1/volumes?q=flowers+inauthor:keyes&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY"
+    func fetchBooks(booksCompletionHandler: @escaping (/*[Books]*/) -> ()){
+        //let urlString = "https://www.google.com/search?cook+books" //trial
+       /* let urlString = "https://books.google.com/books?uid=110997512389116888553&as_coll=1001&source=gbs_lp_bookshelf_list&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY" //book shelf */
         let urlString = "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY" // works
-        //let urlString = "https://www.googleapis.com/books/v1/volumes?q=technicalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY" //works
-        //let urlString = "https://www.googleapis.com/books/v1/volumes?q=generalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY" //works
+        let technicalsString = "https://www.googleapis.com/books/v1/volumes?q=technicalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY" //works
+        let generalsString = "https://www.googleapis.com/books/v1/volumes?q=generalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY" //works
+    
+        /*
+        bookUrlDecoder(aUrlString: generalsString, count: 0){
+            self.generalBooksCollection.reloadData()
+        }
+        bookUrlDecoder(aUrlString: technicalsString, count: 1){
+            self.technicalBooksCollection.reloadData()
+        }
+        bookUrlDecoder(aUrlString: urlString, count: 2){
+            self.cookBooksCollection.reloadData()
+        }
+        
+        booksCompletionHandler()
+        */
+        
+        
+        
         let fetchURL = URL(string: urlString)
         
         guard fetchURL != nil else{
             print("Error ---> fetching Books Url")
             return
         }
-        
         let bookDataTask = URLSession.shared.dataTask(with: fetchURL!){data, response, error in
             guard let data = data else {
                 print("Data is nil")
@@ -141,20 +188,64 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
             do{
                 let decodedBooks = try JSONDecoder().decode(BooksApi.self, from: data)
                 for book in decodedBooks.items {
-                    self.cookBooks.append(book)
-                    print(book.volumeInfo.authors, book.volumeInfo.title)
-                    print(book.volumeInfo.imageLinks.thumbnail)
-                    print(book.v)
+                    if !book.volumeInfo.previewLink.isEmpty{
+                        //self.cookBooks.append(book)
+                        self.cookBooks.append(book)
+
+                        }
                 }
-                booksCompletionHandler(decodedBooks)
+                booksCompletionHandler(/*decodedBooks.items*/) //(decodedBooks)
             }catch{
                 print("Error ---> Decoding books")
             }
         }
         bookDataTask.resume()
         
+        
     }
+    
+    //--------------------------------------------------------------------------------------------------------------------------------------
+    func bookUrlDecoder(aUrlString: String, count: Int, completion: @escaping (/*[Books]*/) -> ()){
 
+        let fetchURL = URL(string: aUrlString)
+        
+        guard fetchURL != nil else{
+            print("Error ---> fetching Books Url")
+            return
+        }
+        let bookDataTask = URLSession.shared.dataTask(with: fetchURL!){data, response, error in
+            guard let data = data else {
+                print("Data is nil")
+                return
+            }
+            do{
+                let decodedBooks = try JSONDecoder().decode(BooksApi.self, from: data)
+                for book in decodedBooks.items {
+                    if !book.volumeInfo.previewLink.isEmpty{
+                        //self.cookBooks.append(book)
+                        switch count {
+                        case 0:
+                            self.generalBooks.append(book)
+                            completion()
+                        case 1:
+                            self.technicalBooks.append(book)
+                            completion()
+                        case 2:
+                            self.cookBooks.append(book)
+                            completion()
+                        default:
+                            print("None of the counts")
+                        }
+
+                        }
+                }
+            }catch{
+                print("Error ---> Decoding books")
+            }
+        }
+        bookDataTask.resume()
+    }
+    //--------------------------------------------------------------------------------------------------------------------------------------
 }
 // Implements search bar and display content of the search
 extension BooksViewController: UISearchBarDelegate{
@@ -162,33 +253,26 @@ extension BooksViewController: UISearchBarDelegate{
         if !searchText.isEmpty{
             filteredBooks = books.filter({$0.lowercased().prefix(searchText.count) == searchText.lowercased()})
             isSearchingBook = true
-            searchBooksCollection.isHidden = false
+            ///searchBooksCollection.isHidden = false
 
-            self.searchBooksCollection.reloadData()
+            //self.searchBooksCollection.reloadData()
             
         }else{
             isSearchingBook = true
-            searchBooksCollection.isHidden = false
+            //searchBooksCollection.isHidden = false
         }
         isSearchingBook = false
     }
 }
 
 struct BooksApi: Codable {
-    var kind: String
+    //var kind: String
     var items: [Books]
-   /* var status: String
-    var copyright: String
-    var num_results: Int
-    var last_modified: String
-    var results: [BookDetails]*/
-    
-    //var results: [String]
 }
 struct Books: Codable{
-    var kind, id, etag, selfLink: String
+    //var kind, id, etag, selfLink: String
     var volumeInfo: BookDetails
-    var accessInfo: AccessInfo
+    //var accessInfo: AccessInfo
     
 }
 struct BookDetails: Codable{
@@ -196,17 +280,17 @@ struct BookDetails: Codable{
     var title: String
     var authors: [String]
     var publisher, publishedDate, description: String
-    var industryIdentifiers: [IndustryIdentifiers]
-    var readingModes: ReadingModes
-    var pageCount: Int
-    var printType: String
-    var categories: [String]
-    //var averageRating, ratingsCount: Int
-    var maturityRating: String
+    //var industryIdentifiers: [IndustryIdentifiers]
+    //var readingModes: ReadingModes
+    //var pageCount: Int
+    //var printType: String
+    //var categories: [String]
+    //var maturityRating: String
     var imageLinks: ImageLinks
     var previewLink: String
 
 }
+/*
 struct AccessInfo: Codable{
     var webReaderLink: String
 }
@@ -215,7 +299,7 @@ struct IndustryIdentifiers: Codable{
 }
 struct ReadingModes: Codable{
     var text, image: Bool
-}
+}*/
 struct ImageLinks: Codable{
     var smallThumbnail, thumbnail: String
 }

@@ -6,7 +6,8 @@
 //
 
 import UIKit
-import PDFKit
+//import PDFKit
+import WebKit
 
 class BookPDFViewController: UIViewController {
 
@@ -15,13 +16,11 @@ class BookPDFViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = bookName!
-        let pdfView = PDFView(frame: view.bounds)
-        pdfView.autoScales = true
-        let filePath = Bundle.main.url(forResource: bookName, withExtension: "pdf")
-        pdfView.document = PDFDocument(url: filePath!)
         
-        view.addSubview(pdfView)
+        let myView = WKWebView(frame: view.bounds)
+        myView.load(URLRequest(url: URL(string: bookName!)!))
+        myView.autoresizesSubviews = true
+        view.addSubview(myView)
 
     }
 
