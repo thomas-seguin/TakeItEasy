@@ -15,6 +15,9 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     @IBOutlet weak var technicalBooksCollection: UICollectionView!
     @IBOutlet weak var cookBooksCollection: UICollectionView!
    
+    @IBOutlet weak var cookBooksTitle: UILabel!
+    @IBOutlet weak var technicalBooksTitle: UILabel!
+    @IBOutlet weak var generalBooksTitle: UILabel!
     
     var filteredBooks = [Books]()
     var isSearchingBook = false
@@ -28,23 +31,27 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 2){
+
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 2) {
             DispatchQueue.main.async{
+                self.cookBooksTitle.text = "Cook Books"
                 self.cookBooksCollection.reloadData()
             }
         }
-        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=technicalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 1){
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=technicalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 1) {
             DispatchQueue.main.async{
+                self.technicalBooksTitle.text = "Technical Books"
                 self.technicalBooksCollection.reloadData()
             }
         }
+            
         
-        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=all+bookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 0){
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=all+bookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 0) {
             DispatchQueue.main.async{
+                self.generalBooksTitle.text = "General Books"
                 self.generalBooksCollection.reloadData()
             }
         }
-
     }
 
     
@@ -62,13 +69,6 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        
-        func cell(cellIdentifier: String) -> UICollectionViewCell {
-            let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
-            bookCell.backgroundColor = UIColor.yellow
-            return bookCell
-        }
         
         if collectionView == searchBooksCollection {
             let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookSearchCell", for: indexPath) as! BookSearchCollectionViewCell
@@ -99,8 +99,6 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
                 }
                 
             }
-
-            
             return bookCell
             
             //return cell(cellIdentifier: "generalBookCell") as! GeneralBooksCollectionViewCell
@@ -244,40 +242,20 @@ extension BooksViewController: UISearchBarDelegate{
 }
 
 struct BooksApi: Codable {
-    //var kind: String
     var items: [Books]
 }
 struct Books: Codable{
-    //var kind, id, etag, selfLink: String
     var volumeInfo: BookDetails
-    //var accessInfo: AccessInfo
-    
 }
 struct BookDetails: Codable{
     //AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY google api-key
     var title: String
     var authors: [String]
-    var publisher, publishedDate, description: String
-    //var industryIdentifiers: [IndustryIdentifiers]
-    //var readingModes: ReadingModes
-    //var pageCount: Int
-    //var printType: String
-    //var categories: [String]
-    //var maturityRating: String
     var imageLinks: ImageLinks
     var previewLink: String
 
 }
-/*
-struct AccessInfo: Codable{
-    var webReaderLink: String
-}
-struct IndustryIdentifiers: Codable{
-    var type, identifier: String
-}
-struct ReadingModes: Codable{
-    var text, image: Bool
-}*/
+
 struct ImageLinks: Codable{
     var smallThumbnail, thumbnail: String
 }

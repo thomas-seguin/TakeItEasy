@@ -9,8 +9,5 @@
 import UIKit
 
 class TechnicalBooksCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var imageBackground: UIImageView!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var author: UILabel!
 }

@@ -619,7 +619,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" fixedFrame="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="izY-FS-c39">
-                                <rect key="frame" x="0.0" y="108" width="428" height="44"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -627,7 +627,7 @@
                                 </connections>
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ePP-cU-ST0">
-                                <rect key="frame" x="0.0" y="210" width="428" height="175"/>
+                                <rect key="frame" x="0.0" y="192" width="428" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="imf-Tw-07d">
@@ -645,20 +645,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="138" height="174"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quP-Ru-FRo">
-                                                    <rect key="frame" x="48" y="64" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XZz-Xk-uXx">
-                                                    <rect key="frame" x="48" y="111" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Iw-Qq-YtT">
                                                     <rect key="frame" x="0.0" y="-11.666666666666666" width="152" height="198"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -667,9 +653,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="138" height="174"/>
                                         <connections>
-                                            <outlet property="author" destination="XZz-Xk-uXx" id="82J-Va-Kco"/>
                                             <outlet property="imageBackground" destination="6Iw-Qq-YtT" id="eU5-Xi-Sdh"/>
-                                            <outlet property="title" destination="quP-Ru-FRo" id="kv4-L3-oxI"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -710,20 +694,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="138" height="174"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGQ-2v-uaK">
-                                                    <rect key="frame" x="48" y="37" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tBa-xT-RN2">
-                                                    <rect key="frame" x="48" y="77" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Qd-76-lgB">
                                                     <rect key="frame" x="0.0" y="-12" width="149" height="203"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -732,9 +702,7 @@
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="138" height="174"/>
                                         <connections>
-                                            <outlet property="author" destination="yGQ-2v-uaK" id="q2T-E7-68V"/>
                                             <outlet property="imageBackground" destination="1Qd-76-lgB" id="XGt-58-QLD"/>
-                                            <outlet property="title" destination="tBa-xT-RN2" id="xkh-Oo-mOx"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -762,26 +730,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="150" height="174"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Em-u3-JTp">
-                                                    <rect key="frame" x="0.0" y="0.0" width="150" height="20.333333333333332"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ulN-pU-Rhd">
-                                                    <rect key="frame" x="8" y="145" width="111" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9q-Q8-nD1">
-                                                    <rect key="frame" x="0.0" y="28" width="150" height="76"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TUD-Ia-PGB">
                                                     <rect key="frame" x="0.0" y="0.0" width="150" height="174"/>
                                                     <color key="backgroundColor" red="0.52753146360000003" green="0.66666668650000005" blue="0.64204055149999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -790,19 +738,13 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="TUD-Ia-PGB" secondAttribute="bottom" id="Q5z-WV-W9B"/>
                                                 <constraint firstItem="TUD-Ia-PGB" firstAttribute="leading" secondItem="G2N-tC-JAS" secondAttribute="leading" id="cMy-4M-owr"/>
-                                                <constraint firstItem="1Em-u3-JTp" firstAttribute="top" secondItem="G2N-tC-JAS" secondAttribute="top" id="d0O-II-f7y"/>
                                                 <constraint firstItem="TUD-Ia-PGB" firstAttribute="top" secondItem="G2N-tC-JAS" secondAttribute="top" id="eA8-Gp-GSK"/>
                                                 <constraint firstAttribute="trailing" secondItem="TUD-Ia-PGB" secondAttribute="trailing" id="fHz-Bq-Nld"/>
-                                                <constraint firstAttribute="trailing" secondItem="1Em-u3-JTp" secondAttribute="trailing" id="iIm-Ms-iJw"/>
-                                                <constraint firstItem="1Em-u3-JTp" firstAttribute="leading" secondItem="G2N-tC-JAS" secondAttribute="leading" id="iUF-1n-Ub9"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="150" height="174"/>
                                         <connections>
-                                            <outlet property="author" destination="ulN-pU-Rhd" id="8a8-ti-d8u"/>
-                                            <outlet property="bookDescription" destination="f9q-Q8-nD1" id="GSZ-nt-qDt"/>
                                             <outlet property="imageBackground" destination="TUD-Ia-PGB" id="L4H-CV-kdu"/>
-                                            <outlet property="title" destination="1Em-u3-JTp" id="rbt-7q-ZJc"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -811,21 +753,21 @@
                                     <outlet property="delegate" destination="nnf-CQ-970" id="MGc-k1-Rxk"/>
                                 </connections>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="General Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vy3-Ea-2vj">
-                                <rect key="frame" x="121" y="169" width="111" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vy3-Ea-2vj">
+                                <rect key="frame" x="52" y="152" width="262" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Technical Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keQ-lH-5vo">
-                                <rect key="frame" x="121" y="393" width="124" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keQ-lH-5vo">
+                                <rect key="frame" x="52" y="393" width="262" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cook Books" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4P1-Lh-WOg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4P1-Lh-WOg">
                                 <rect key="frame" x="52" y="604" width="262" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -833,7 +775,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fSM-RZ-DTG">
-                                <rect key="frame" x="0.0" y="152" width="428" height="709"/>
+                                <rect key="frame" x="0.0" y="152" width="428" height="673"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IXS-YR-ljn">
@@ -880,14 +822,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="cookBooksCollection" destination="cIf-XB-wEb" id="Wqj-Ab-ASu"/>
+                        <outlet property="cookBooksTitle" destination="4P1-Lh-WOg" id="HKL-U6-Q63"/>
                         <outlet property="generalBooksCollection" destination="ePP-cU-ST0" id="3OW-iX-mtk"/>
+                        <outlet property="generalBooksTitle" destination="Vy3-Ea-2vj" id="Rtg-dA-c2N"/>
                         <outlet property="searchBooksCollection" destination="fSM-RZ-DTG" id="kmE-Tc-Gva"/>
                         <outlet property="technicalBooksCollection" destination="LiC-p5-iSs" id="1T6-iR-axl"/>
+                        <outlet property="technicalBooksTitle" destination="keQ-lH-5vo" id="iFA-kl-C51"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbE-cy-k44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1182" y="776"/>
+            <point key="canvasLocation" x="1181.7757009345794" y="775.59395248380133"/>
         </scene>
         <!--BookPDF View Controller-->
         <scene sceneID="dbK-Gm-OWV">

@@ -8,8 +8,5 @@
 import UIKit
 
 class GeneralBooksCollectionViewCell: UICollectionViewCell {
-    
     @IBOutlet weak var imageBackground: UIImageView!
-    @IBOutlet weak var author: UILabel!
-    @IBOutlet weak var title: UILabel!
 }
