@@ -92,7 +92,7 @@ class LoginViewController: UIViewController {
             guard let vc = storyboard?.instantiateViewController(withIdentifier: "main")else {
                 return
             }
-            //vc.modalPresentationStyle = .fullScreen
+            vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
             
         }else {

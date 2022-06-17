@@ -408,6 +408,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="hUv-R3-1ds" kind="relationship" relationship="viewControllers" id="kGu-Ov-Vrm"/>
@@ -820,23 +821,23 @@
                                 </connections>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="General Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vy3-Ea-2vj">
-                                <rect key="frame" x="121" y="169" width="111" height="21"/>
+                                <rect key="frame" x="121" y="169" width="122" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Technical Books" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="keQ-lH-5vo">
-                                <rect key="frame" x="121" y="393" width="124" height="21"/>
+                                <rect key="frame" x="121" y="393" width="135" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cook Books" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4P1-Lh-WOg">
                                 <rect key="frame" x="52" y="604" width="262" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -881,7 +882,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OAL-3U-3Xx"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="lCz-bg-mId">
                         <barButtonItem key="backBarButtonItem" title="Books" id="p7Z-ub-fsg"/>
@@ -916,7 +917,9 @@
         <scene sceneID="Fzg-qT-ce4">
             <objects>
                 <navigationController storyboardIdentifier="BookView" automaticallyAdjustsScrollViewInsets="NO" id="CRg-fy-031" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Books" image="book.closed.fill" catalog="system" id="l7u-Uu-ZWY"/>
+                    <tabBarItem key="tabBarItem" title="Books" image="book.closed.fill" catalog="system" id="l7u-Uu-ZWY">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="d82-nn-TDj">
                         <rect key="frame" x="0.0" y="44" width="428" height="44"/>
@@ -1263,7 +1266,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="G1m-VT-GIE"/>
         <segue reference="MFx-iQ-0nf"/>
         <segue reference="LOF-ST-Xrb"/>
     </inferredMetricsTieBreakers>

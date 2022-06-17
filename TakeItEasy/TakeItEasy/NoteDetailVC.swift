@@ -47,6 +47,7 @@ class NoteDetailVC: UIViewController {
              newNote.id = noteList.count as NSNumber
              newNote.title = titleTF.text
              newNote.desc = descTV.text
+             newNote.username = UserSingleton.userData.currentUsername
              //assigning date to createdAt
              newNote.createdAt = Date()
              
