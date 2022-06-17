@@ -63,7 +63,7 @@ class NoteTableView: UITableViewController, UISearchBarDelegate {
             }
 //            noteObject = results
         }
-        arrayObject = NoteDBHelp.dbHelper.getAllUserNotes()
+        arrayObject = NoteDBHelp.dbHelper.getAllUserNotes(searchParameter: UserSingleton.userData.currentUsername)
         filteredData = noteObject
     
     }
@@ -128,7 +128,7 @@ class NoteTableView: UITableViewController, UISearchBarDelegate {
         
         if (searchText == ""){
 //            noteObject = filteredData
-            arrayObject = NoteDBHelp.dbHelper.getAllUserNotes()
+            arrayObject = NoteDBHelp.dbHelper.getAllUserNotes(searchParameter: UserSingleton.userData.currentUsername)
         } else{
 //            for searchedbar in arrayObject{
 //                if searchedbar.title.lowercased().contains(searchText.lowercased()){
