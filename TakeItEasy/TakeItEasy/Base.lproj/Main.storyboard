@@ -638,7 +638,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="generalBookCell" id="tRp-dK-z6e" customClass="GeneralBooksCollectionViewCell" customModule="TakeItEasy" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="generalBookCell" id="tRp-dK-z6e" customClass="CookBooksCollectionViewCell" customModule="TakeItEasy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.66666666666666663" width="138" height="174"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DaN-Ua-sUs">
@@ -667,9 +667,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="LOG OUT"/>
+                                <connections>
+                                    <action selector="bookLogOutButton:" destination="nnf-CQ-970" eventType="touchUpInside" id="Gm1-Ub-Teo"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jED-ML-b0p">
-                                <rect key="frame" x="20" y="44" width="233" height="31"/>
+                                <rect key="frame" x="89" y="44" width="164" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
@@ -687,7 +690,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="technicalBookCell" id="BKR-vK-dNs" customClass="TechnicalBooksCollectionViewCell" customModule="TakeItEasy" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="technicalBookCell" id="BKR-vK-dNs" customClass="CookBooksCollectionViewCell" customModule="TakeItEasy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="138" height="174"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="M8c-OG-HAa">
@@ -785,7 +788,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bookSearchCell" id="Fv8-NA-pSJ" customClass="BookSearchCollectionViewCell" customModule="TakeItEasy" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="bookSearchCell" id="Fv8-NA-pSJ" customClass="CookBooksCollectionViewCell" customModule="TakeItEasy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="DpT-yU-Wpd">
@@ -828,6 +831,7 @@
                         <outlet property="searchBooksCollection" destination="fSM-RZ-DTG" id="kmE-Tc-Gva"/>
                         <outlet property="technicalBooksCollection" destination="LiC-p5-iSs" id="1T6-iR-axl"/>
                         <outlet property="technicalBooksTitle" destination="keQ-lH-5vo" id="iFA-kl-C51"/>
+                        <outlet property="userName" destination="jED-ML-b0p" id="8aU-1g-DfL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LbE-cy-k44" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

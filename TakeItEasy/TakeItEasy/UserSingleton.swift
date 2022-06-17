@@ -8,7 +8,7 @@
 import Foundation
 class UserSingleton{
     static var userData = UserSingleton()
-    private var currentUsername = "" // set the successfully loggedin username here at login/register for the Navbar's Username
+    var currentUsername = "" // set the successfully loggedin username here at login/register for the Navbar's Username
     private init(){
         
     }
