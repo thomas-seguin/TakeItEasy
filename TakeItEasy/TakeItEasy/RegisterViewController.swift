@@ -40,28 +40,14 @@ class RegisterViewController: UIViewController {
             valid = false
         }
         
-        let phoneResult = phoneTxt.text?.range(
-            of: phonePattern,
-            options: .regularExpression
-        )
         
-        let emailResult = emailTxt.text?.range(
-            of: emailPattern,
-            options: .regularExpression
-        )
         
         
         let passResult = passwordTxt.text?.range(of: passwordPattern, options: .regularExpression)
         
-        if(emailResult == nil){
-            print("bad email")
-            valid = false
-        }
         
-        if(phoneResult == nil){
-            print("bad phone")
-            valid = false
-        }
+        
+        
         
         if(passResult == nil){
             print("bad pass")
@@ -69,7 +55,7 @@ class RegisterViewController: UIViewController {
         }
         
         if valid{
-            print("creating")
+            errorLabel.text = "creating"
         createUser(email: emailTxt.text ?? "", fName: fNameTxt.text ?? "", lName: lNameTxt.text ?? "", phoneNumber: phoneTxt.text ?? "")
         
         do {
@@ -80,8 +66,13 @@ class RegisterViewController: UIViewController {
         } catch {
             print("failed to save to keychain")
         }
+            guard let vc = storyboard?.instantiateViewController(withIdentifier: "main")else {
+                return
+            }
+            present(vc, animated: true)
+            
         }else {
-            print("bad input")
+            //errorLabel.text = "bad input"
         }
     }
     

@@ -11,11 +11,15 @@ class QuizViewModel{
     var quizzes : [Quiz]
     var searchedQuizzes : [Quiz]
     init(){
+        
 //MARK: Initialize DB and Tables
         QuizDBHelper.dbHelper.createDB()
         QuizDBHelper.dbHelper.createTables()
         //This is where you call populator
-//MARK: Testing
+       // QuizPopulator.populator.quizPopulator()
+       // QuizPopulator.populator.questionPopulator()
+        //QuizPopulator.populator.answerPopulator()
+        //MARK: Testing
         //QuizPopulator.populator.checkingQuizTable()
         //QuizPopulator.populator.checkingQuestionsTable()
 //        QuizPopulator.populator.checkingAnswersTable(testQuiz: 1)
