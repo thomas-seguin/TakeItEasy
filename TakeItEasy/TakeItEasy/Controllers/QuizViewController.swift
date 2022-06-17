@@ -12,10 +12,18 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     //Username and Logout Bar
     @IBOutlet weak var customBar: UINavigationBar!
     @IBOutlet weak var myCollectionView: UICollectionView!
+    @IBOutlet weak var retakeWarning: UILabel!
     var newQuizViewModel = QuizViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         customBar.topItem?.title = UserSingleton.userData.currentUsername
+        
+//        let test = QuizDBHelper.dbHelper.getAllUserResults(username: UserSingleton.userData.currentUsername as NSString)
+//        print(test)
+//        for x in test{
+//            print(x.resultId,x.username,x.quizId,x.userScore)
+//        }
+    
     }
  
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -39,13 +47,20 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let questionaire = storyboard.instantiateViewController(withIdentifier: "Questionaire") as! QuestionaireViewController
-        let obj = QuestionaireViewModel(q : newQuizViewModel.searchedQuizzes[indexPath.row])
-        //obj.quiz = newQuizViewModel.searchedQuizzes[indexPath.row]
-        questionaire.newQuestionaireViewModel = obj
-        print(newQuizViewModel.searchedQuizzes[indexPath.row].quizName!)
-        present(questionaire, animated: true)
+        if(!newQuizViewModel.haveUserDoneQuiz(index : indexPath.row))
+        {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let questionaire = storyboard.instantiateViewController(withIdentifier: "Questionaire") as! QuestionaireViewController
+            let obj = QuestionaireViewModel(q : newQuizViewModel.searchedQuizzes[indexPath.row])
+            questionaire.newQuestionaireViewModel = obj
+            print(newQuizViewModel.searchedQuizzes[indexPath.row].quizName!)
+            retakeWarning.isHidden = true
+            present(questionaire, animated: true)
+            
+        }
+        else{
+            retakeWarning.isHidden = false
+        }
     }
     
 //MARK: For Testing purposes

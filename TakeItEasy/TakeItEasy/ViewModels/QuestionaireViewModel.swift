@@ -37,19 +37,11 @@ class QuestionaireViewModel{
         
     }
     
-    func submitQuizResult() -> Int{
+    func submitAndGetQuizResult() -> UserResult{
         
         let userScore = (currentScore/totalScore) * 100
         print(userScore)
-        if(QuizDBHelper.dbHelper.haveUserdoneQuiz(user: currentUsername, qId: quiz.quizId!)){
-            guard let rId = QuizDBHelper.dbHelper.getSingleResult(username: currentUsername, qId: quiz.quizId!).resultId else { return 0}
-            QuizDBHelper.dbHelper.updateQuizResult(id: rId, score: userScore)
-            return rId
-        }
-        else{
-            QuizDBHelper.dbHelper.insertResult(username: currentUsername, quizId: quiz.quizId!, score: userScore)
-            guard let rId = QuizDBHelper.dbHelper.getSingleResult(username: currentUsername, qId: quiz.quizId!).resultId else { return 0}
-            return rId
-        }
+        QuizDBHelper.dbHelper.insertResult(username: currentUsername, quizId: quiz.quizId!, score: userScore)
+        return QuizDBHelper.dbHelper.getSingleResult(username: currentUsername, qId: quiz.quizId!)
     }
 }

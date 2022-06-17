@@ -42,6 +42,15 @@ class QuizViewModel{
         }
     }
     
+    func haveUserDoneQuiz(index : Int) -> Bool{
+        if(QuizDBHelper.dbHelper.haveUserdoneQuiz(user: UserSingleton.userData.currentUsername as NSString, qId: searchedQuizzes[index].quizId!)){
+            return true
+        }
+        else{
+            return false
+        }
+    }
+    
     
 //MARK: DONT!!!
     func dontCallThis(){

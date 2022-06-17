@@ -240,6 +240,20 @@ class QuizDBHelper{
           }
           return answers
       }
+    
+    func getSingleCorrectAnswerName(questionId : Int) -> String{
+        var stmt : OpaquePointer?
+        var name = ""
+        let query = "Select * from Answers where questionId = \(questionId) and isCorrect = 1"
+        if sqlite3_prepare(dbPointer, query, -1, &stmt, nil) != SQLITE_OK{
+            let err = String(cString: sqlite3_errmsg(dbPointer))
+            print("Error in creating getquestionanswers query", err)
+        }
+        while(sqlite3_step(stmt) == SQLITE_ROW){
+            name = String(cString: sqlite3_column_text(stmt, 1))
+        }
+        return name
+    }
     //COMPLETELY DELETES TABLE
     func dropAnswersTable(){
         if sqlite3_exec(dbPointer, "DROP table if exists Answers", nil, nil, nil) !=  SQLITE_OK{
@@ -250,6 +264,8 @@ class QuizDBHelper{
             print("Succes dropping Answer Table")
         }
     }
+    
+
     
   //MARK: Results Functions
       //call when user finished a test to save result
@@ -289,7 +305,7 @@ class QuizDBHelper{
       func getAllUserResults(username : NSString) -> [UserResult]{
           results.removeAll()
           var stmt : OpaquePointer?
-          let query = "Select * from Results where username = \(username)"
+          let query = "Select * from Results where username = '\(username)'"
           if sqlite3_prepare(dbPointer, query, -1, &stmt, nil) != SQLITE_OK{
               let err = String(cString: sqlite3_errmsg(dbPointer))
               print("Error in creating getALLUserResults query", err)
@@ -328,7 +344,7 @@ class QuizDBHelper{
     }
     
     func getSingleResult(username : NSString, qId : Int) -> UserResult{
-        let query = "select * from Results where username = \(username) and quizId = \(qId);"
+        let query = "select * from Results where username = '\(username)' and quizId = \(qId);"
         var stmt : OpaquePointer?
         var res : UserResult?
         if sqlite3_prepare(dbPointer, query, -1, &stmt, nil) == SQLITE_OK{
@@ -351,7 +367,7 @@ class QuizDBHelper{
  
       func haveUserdoneQuiz(user : NSString, qId : Int) -> Bool{
           var stmt : OpaquePointer?
-          let query = "Select * from Results where username = \(user) AND quizId = \(qId)"
+          let query = "Select * from Results where username = '\(user)' AND quizId = \(qId)"
           if sqlite3_prepare(dbPointer, query, -1, &stmt, nil) != SQLITE_OK{
               let err = String(cString: sqlite3_errmsg(dbPointer))
               print("Error in creating haveUserDoneQuiz query", err)
@@ -386,5 +402,7 @@ class QuizDBHelper{
             print("Error in creating updatQuizResultQuery")
         }
     }
+    
+    
 }
 

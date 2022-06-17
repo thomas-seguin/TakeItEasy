@@ -49,17 +49,27 @@ class QuestionaireViewController: UIViewController, UITableViewDelegate, UITable
             newQuestionaireViewModel?.submitAnswer(ans: selectedAnswer!, currentQues: currentQuesNum)
             currentQuesNum += 1
             
-        }
-        if(currentQuesNum == newQuestionaireViewModel!.quiz.questions!.count){
-            print(newQuestionaireViewModel?.submitQuizResult() ?? 0)
             
         }
+        if(currentQuesNum == newQuestionaireViewModel!.quiz.questions!.count){
+            guard let quizResult = newQuestionaireViewModel?.submitAndGetQuizResult() else { return }
+            let newQuizResultModel = QuizResultViewModel(res: quizResult)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let nextView = storyboard.instantiateViewController(withIdentifier: "QuizResult") as! QuizResultViewController
+            nextView.prevView = self
+            nextView.newQuizResultViewModel = newQuizResultModel
+            present(nextView, animated: true)
+                
+            
+        }
+        else{
+            questionName_Lbl.text = newQuestionaireViewModel?.getQuestionName(currentQues: currentQuesNum)
+            answersArray = (newQuestionaireViewModel?.getAnswers(currentQues: currentQuesNum))!
+            selectedAnswer = nil
+            answersTable.reloadData()
+        }
         
-        questionName_Lbl.text = newQuestionaireViewModel?.getQuestionName(currentQues: currentQuesNum)
-        answersArray = (newQuestionaireViewModel?.getAnswers(currentQues: currentQuesNum))!
-        selectedAnswer = nil
-        answersTable.reloadData()
-
     }
+    
     
 }
