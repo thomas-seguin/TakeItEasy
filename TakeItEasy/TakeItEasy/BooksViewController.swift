@@ -188,6 +188,7 @@ extension BooksViewController: UISearchBarDelegate{
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         statusModifier(currentStatus: false)
+        searchBar.text = ""
         searchBar.resignFirstResponder()
     }
     
