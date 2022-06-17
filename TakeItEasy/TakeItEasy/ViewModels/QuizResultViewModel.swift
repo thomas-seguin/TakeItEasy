@@ -6,11 +6,14 @@
 //
 
 import Foundation
+import AVFoundation
 class QuizResultViewModel{
     private var result : UserResult
     private var passed = false
+    private var audioPlayer = AVAudioPlayer()
     var questionNames = [String]()
     var correctAnswers = [String]()
+    
     init(res : UserResult){
         result = res
         if(result.userScore! >= 80.0){
@@ -20,6 +23,27 @@ class QuizResultViewModel{
         for question in quesArr {
             questionNames.append(question.questionName!)
             correctAnswers.append(QuizDBHelper.dbHelper.getSingleCorrectAnswerName(questionId: question.questionid!))
+        }
+    }
+    
+    func playSound(){
+        var musicFile = ""
+        if(passed)
+        {
+            musicFile = "Passed"
+        }
+        else
+        {
+            musicFile = "Failed"
+        }
+        let filePath = Bundle.main.path(forResource: musicFile, ofType: "mp3")
+        let newURL = URL(fileURLWithPath: filePath!)
+        do{
+            audioPlayer =  try AVAudioPlayer(contentsOf: newURL)
+            audioPlayer.play()
+        }
+        catch{
+            print("file not found")
         }
     }
     
@@ -34,6 +58,7 @@ class QuizResultViewModel{
     func getArrayCount() -> Int{
         return questionNames.count
     }
+    
     
     func getCode() -> String{
         if(result.userScore == 0){

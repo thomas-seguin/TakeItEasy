@@ -22,6 +22,7 @@ class QuizResultViewController: UIViewController, UITableViewDelegate, UITableVi
             resultHeader.text = "Congratulations!"
             resultImg.image = UIImage(named: "passed-stamp-round-grunge-sign-label-181912691")
         }
+        newQuizResultViewModel?.playSound()
         let num = String(Int(newQuizResultViewModel!.getScore()))
         scoreLbl.text = "Quiz Score: " + num + "%"
         pointsLbl.text = "Copy/Save and use this code at the FunZoneShop to redeem" + num + " points"

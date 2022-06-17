@@ -11,6 +11,8 @@
 		256DD8282858D7E9000FD8CB /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD8272858D7E9000FD8CB /* SongsCollectionViewCell.swift */; };
 		256DD82A2858D801000FD8CB /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD8292858D801000FD8CB /* Song.swift */; };
 		256DD82C2858D80C000FD8CB /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD82B2858D80C000FD8CB /* Player.swift */; };
+		7E046FC3285CE9E600FD1598 /* Passed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E046FC2285CE9E600FD1598 /* Passed.mp3 */; };
+		7E046FC5285CE9EB00FD1598 /* Failed.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7E046FC4285CE9EB00FD1598 /* Failed.mp3 */; };
 		7E4C31F4285BFE3C00CB2F52 /* QuizResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C31F3285BFE3C00CB2F52 /* QuizResultViewController.swift */; };
 		7E4C31F6285C0C8F00CB2F52 /* QuizResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C31F5285C0C8F00CB2F52 /* QuizResultViewModel.swift */; };
 		7E4C31F8285C29C700CB2F52 /* ReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E4C31F7285C29C700CB2F52 /* ReviewTableViewCell.swift */; };
@@ -53,6 +55,8 @@
 		256DD8272858D7E9000FD8CB /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
 		256DD8292858D801000FD8CB /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
 		256DD82B2858D80C000FD8CB /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		7E046FC2285CE9E600FD1598 /* Passed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Passed.mp3; sourceTree = "<group>"; };
+		7E046FC4285CE9EB00FD1598 /* Failed.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Failed.mp3; sourceTree = "<group>"; };
 		7E4C31F3285BFE3C00CB2F52 /* QuizResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewController.swift; sourceTree = "<group>"; };
 		7E4C31F5285C0C8F00CB2F52 /* QuizResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizResultViewModel.swift; sourceTree = "<group>"; };
 		7E4C31F7285C29C700CB2F52 /* ReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -114,6 +118,15 @@
 			path = Music;
 			sourceTree = "<group>";
 		};
+		7E046FC1285CE9D800FD1598 /* SoundEffects */ = {
+			isa = PBXGroup;
+			children = (
+				7E046FC4285CE9EB00FD1598 /* Failed.mp3 */,
+				7E046FC2285CE9E600FD1598 /* Passed.mp3 */,
+			);
+			path = SoundEffects;
+			sourceTree = "<group>";
+		};
 		7EE64405285936B400AE353C /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +156,7 @@
 		841EA18F2851367600318BCA /* TakeItEasy */ = {
 			isa = PBXGroup;
 			children = (
+				7E046FC1285CE9D800FD1598 /* SoundEffects */,
 				7EE64405285936B400AE353C /* Helpers */,
 				256DD8242858D79E000FD8CB /* Music */,
 				84575D682853C9A000339A17 /* UserModel */,
@@ -280,9 +294,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E046FC5285CE9EB00FD1598 /* Failed.mp3 in Resources */,
 				841EA1A02851367900318BCA /* LaunchScreen.storyboard in Resources */,
 				841EA19D2851367900318BCA /* Assets.xcassets in Resources */,
 				841EA1982851367600318BCA /* Main.storyboard in Resources */,
+				7E046FC3285CE9E600FD1598 /* Passed.mp3 in Resources */,
 				84940BA228539F4F0089F333 /* bookSample.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
