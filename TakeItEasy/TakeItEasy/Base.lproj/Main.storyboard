@@ -13,7 +13,7 @@
         <!--View Controller-->
         <scene sceneID="bja-M0-huC">
             <objects>
-                <viewController id="PWg-Qs-H44" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Test" id="PWg-Qs-H44" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xOX-h0-Xqb">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -957,8 +957,13 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rZ-LH-J43">
                                 <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="MainBackground"/>
+                                <color key="barTintColor" name="MainBackground"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="20"/>
+                                </textAttributes>
+                                <textAttributes key="largeTitleTextAttributes">
+                                    <color key="textColor" name="MainBackground"/>
                                 </textAttributes>
                                 <items>
                                     <navigationItem title="Title" id="Ssb-Yr-we6">
@@ -966,10 +971,13 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="r0k-Ne-B3T">
                                                 <rect key="frame" x="313" y="4.6666666666666679" width="95" height="34.666666666666657"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" systemColor="systemRedColor"/>
-                                                <color key="tintColor" systemColor="labelColor"/>
+                                                <color key="backgroundColor" name="MainBackground"/>
+                                                <color key="tintColor" name="AccentColor"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                                <connections>
+                                                    <action selector="logout_btn:" destination="gbm-7H-GC2" eventType="touchUpInside" id="vPU-hH-a5P"/>
+                                                </connections>
                                             </button>
                                         </barButtonItem>
                                     </navigationItem>
@@ -1004,6 +1012,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="256" height="256"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFit" fixedFrame="YES" image="questionmark" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="YAL-xI-Vtf">
+                                                    <rect key="frame" x="8" y="18" width="240" height="222"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="tintColor" red="0.92145198579999998" green="0.83249610709999999" blue="0.36036405739999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quiz Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qzf-uz-q9b">
                                                     <rect key="frame" x="8" y="57" width="240" height="132"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1057,7 +1070,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oDA-hW-P4G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6461" y="84"/>
+            <point key="canvasLocation" x="6459.8130841121492" y="83.585313174946009"/>
         </scene>
         <!--Questionaire View Controller-->
         <scene sceneID="ILT-ZU-Vnx">
@@ -1093,7 +1106,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="100" id="Vz5-hA-RX8" customClass="QuestionaireTableViewCell" customModule="TakeItEasy" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" focusStyle="custom" rowHeight="100" id="Vz5-hA-RX8" customClass="QuestionaireTableViewCell" customModule="TakeItEasy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="388" height="100"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vz5-hA-RX8" id="oPU-of-uVc">
@@ -1170,7 +1183,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="failed-grunge-vintage-stamp-isolated-white-background-failed-sign-failed-stamp-122201809" translatesAutoresizingMaskIntoConstraints="NO" id="7X1-9V-vKT">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Failed" translatesAutoresizingMaskIntoConstraints="NO" id="7X1-9V-vKT">
                                 <rect key="frame" x="94" y="107" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -1223,6 +1236,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Answer" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g9U-ej-PbD">
                                                     <rect key="frame" x="20" y="158" width="348" height="46"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" name="MainButton"/>
                                                     <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1262,15 +1276,22 @@
         <segue reference="MFx-iQ-0nf"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="Failed" width="1074" height="906"/>
         <image name="book.closed.fill" catalog="system" width="115" height="128"/>
-        <image name="failed-grunge-vintage-stamp-isolated-white-background-failed-sign-failed-stamp-122201809" width="1074" height="906"/>
         <image name="globe" catalog="system" width="128" height="121"/>
         <image name="mic" catalog="system" width="108" height="128"/>
         <image name="music.note" catalog="system" width="97" height="128"/>
         <image name="note.text" catalog="system" width="128" height="106"/>
         <image name="playpause.fill" catalog="system" width="128" height="70"/>
+        <image name="questionmark" catalog="system" width="96" height="128"/>
         <image name="questionmark.folder" catalog="system" width="128" height="97"/>
         <image name="wp2817719" width="300" height="533.33331298828125"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="MainBackground">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="MainButton">
             <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

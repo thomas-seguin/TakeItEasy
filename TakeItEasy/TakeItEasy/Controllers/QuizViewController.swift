@@ -18,6 +18,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         customBar.topItem?.title = UserSingleton.userData.currentUsername
+        print(UIColor.purple.cgColor)
         
 //        let test = QuizDBHelper.dbHelper.getAllUserResults(username: UserSingleton.userData.currentUsername as NSString)
 //        print(test)
@@ -27,6 +28,9 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     }
  
+    @IBAction func logout_btn(_ sender: Any) {
+        UserSingleton.userData.logout(view: self.view)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return newQuizViewModel.searchedQuizzes.count
     }
@@ -34,11 +38,12 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! QuizCollectionViewCell
         cell.quizLabel.text = newQuizViewModel.searchedQuizzes[indexPath.row].quizName
-        cell.backgroundColor = UIColor.purple
+        cell.backgroundColor = UIColor(named: "Cell")
         cell.layer.borderColor = CGColor(red: 100, green: 0, blue: 255, alpha: 1)
         cell.layer.cornerRadius = 10.0
         cell.layer.borderWidth = 1.0;
         cell.layer.masksToBounds = true;
+        
         return cell
     }
     
@@ -62,8 +67,8 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         else{
             retakeWarning.isHidden = false
         }
-        collectionView.cellForItem(at: prevSelected)?.backgroundColor = UIColor.purple
-        collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.systemTeal
+        collectionView.cellForItem(at: prevSelected)?.backgroundColor = UIColor(named: "Cell")
+        collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor(named: "MainButton")
         prevSelected = indexPath
     }
     

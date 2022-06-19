@@ -18,6 +18,7 @@ class QuestionaireViewController: UIViewController, UITableViewDelegate, UITable
     var currentQuesNum = 0
     var answersArray : [Answer] = []
     var selectedAnswer : Answer?
+    var prevSelected : IndexPath?
     override func viewDidLoad() {
         super.viewDidLoad()
         quizName_Lbl.text = newQuestionaireViewModel?.quiz.quizName
@@ -32,20 +33,27 @@ class QuestionaireViewController: UIViewController, UITableViewDelegate, UITable
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! QuestionaireTableViewCell
         cell.answerLbl.text = answersArray[indexPath.row].answerName
-        cell.backgroundColor = UIColor.purple
+        cell.backgroundColor = UIColor(named: "Cell")
         cell.layer.borderColor = CGColor(red: 100, green: 0, blue: 255, alpha: 1)
         cell.layer.cornerRadius = 10.0
         cell.layer.borderWidth = 1.0;
         cell.layer.masksToBounds = true;
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        if(prevSelected != nil){
+            tableView.cellForRow(at: prevSelected!)!.backgroundColor = UIColor.purple
+        }
         selectedAnswer = answersArray[indexPath.row]
         selectWarning_Lbl.isHidden = true
+        tableView.cellForRow(at: indexPath)?.backgroundColor = UIColor(named: "MainButton")
+        prevSelected = indexPath
         
     }
+    
     
     @IBAction func submit_Btn(_ sender: Any) {
   
