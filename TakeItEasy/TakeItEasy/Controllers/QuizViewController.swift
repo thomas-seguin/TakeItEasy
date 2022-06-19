@@ -14,6 +14,7 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
     @IBOutlet weak var myCollectionView: UICollectionView!
     @IBOutlet weak var retakeWarning: UILabel!
     var newQuizViewModel = QuizViewModel()
+    var prevSelected = IndexPath()
     override func viewDidLoad() {
         super.viewDidLoad()
         customBar.topItem?.title = UserSingleton.userData.currentUsername
@@ -61,6 +62,9 @@ class QuizViewController: UIViewController, UICollectionViewDelegate, UICollecti
         else{
             retakeWarning.isHidden = false
         }
+        collectionView.cellForItem(at: prevSelected)?.backgroundColor = UIColor.purple
+        collectionView.cellForItem(at: indexPath)?.backgroundColor = UIColor.systemTeal
+        prevSelected = indexPath
     }
     
 //MARK: For Testing purposes

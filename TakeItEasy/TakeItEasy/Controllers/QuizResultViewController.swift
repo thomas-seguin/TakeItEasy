@@ -37,6 +37,11 @@ class QuizResultViewController: UIViewController, UITableViewDelegate, UITableVi
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ReviewTableViewCell
         cell.questionLbl.text = newQuizResultViewModel?.questionNames[indexPath.row]
         cell.answerLbl.text = newQuizResultViewModel?.correctAnswers[indexPath.row]
+        cell.backgroundColor = UIColor.purple
+        cell.layer.borderColor = CGColor(red: 100, green: 0, blue: 255, alpha: 1)
+        cell.layer.cornerRadius = 10.0
+        cell.layer.borderWidth = 1.0;
+        cell.layer.masksToBounds = true;
         return cell
     }
     
