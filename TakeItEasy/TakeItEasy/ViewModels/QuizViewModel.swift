@@ -15,6 +15,7 @@ class QuizViewModel{
         QuizDBHelper.dbHelper.createDB()
         QuizDBHelper.dbHelper.createTables()
         //This is where you call populator
+        
 //MARK: Testing
         //QuizPopulator.populator.checkingQuizTable()
         //QuizPopulator.populator.checkingQuestionsTable()
