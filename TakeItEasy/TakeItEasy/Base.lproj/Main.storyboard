@@ -43,7 +43,7 @@
         <!--Login View Controller-->
         <scene sceneID="Yqy-iz-DDT">
             <objects>
-                <viewController id="syL-dV-5rF" customClass="LoginViewController" customModule="TakeItEasy" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="login" id="syL-dV-5rF" customClass="LoginViewController" customModule="TakeItEasy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lN4-PQ-PRA">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="872"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1688,6 +1688,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="G1m-VT-GIE"/>
         <segue reference="MFx-iQ-0nf"/>
         <segue reference="LOF-ST-Xrb"/>
     </inferredMetricsTieBreakers>
