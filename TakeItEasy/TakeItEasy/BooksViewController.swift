@@ -111,11 +111,11 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
 
     }
-    /*
+    
     @IBAction func bookLogOutButton(_ sender: Any) {
         navigationController?.popToRootViewController(animated: true)
     }
-    */
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyObject = UIStoryboard(name: "Main", bundle: nil)
