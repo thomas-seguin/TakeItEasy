@@ -7,10 +7,13 @@
 
 import UIKit
 
+import UIKit
+
 class SongsCollectionViewCell: UICollectionViewCell {
     
     
     @IBOutlet weak var songName: UILabel!
+    @IBOutlet weak var albumImage: UIImageView!
     
     override func layoutSubviews()
     {
