@@ -15,7 +15,6 @@ class Note: NSManagedObject{
     @NSManaged var desc: String!
     @NSManaged var deletedDate: Date?
     @NSManaged var createdAt: Date?
-    @NSManaged var username: String!
     
     
     

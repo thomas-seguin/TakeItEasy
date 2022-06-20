@@ -240,20 +240,6 @@ class QuizDBHelper{
           }
           return answers
       }
-    
-    func getSingleCorrectAnswerName(questionId : Int) -> String{
-        var stmt : OpaquePointer?
-        var name = ""
-        let query = "Select * from Answers where questionId = \(questionId) and isCorrect = 1"
-        if sqlite3_prepare(dbPointer, query, -1, &stmt, nil) != SQLITE_OK{
-            let err = String(cString: sqlite3_errmsg(dbPointer))
-            print("Error in creating getquestionanswers query", err)
-        }
-        while(sqlite3_step(stmt) == SQLITE_ROW){
-            name = String(cString: sqlite3_column_text(stmt, 1))
-        }
-        return name
-    }
     //COMPLETELY DELETES TABLE
     func dropAnswersTable(){
         if sqlite3_exec(dbPointer, "DROP table if exists Answers", nil, nil, nil) !=  SQLITE_OK{
@@ -264,8 +250,6 @@ class QuizDBHelper{
             print("Succes dropping Answer Table")
         }
     }
-    
-
     
   //MARK: Results Functions
       //call when user finished a test to save result
@@ -305,7 +289,7 @@ class QuizDBHelper{
       func getAllUserResults(username : NSString) -> [UserResult]{
           results.removeAll()
           var stmt : OpaquePointer?
-          let query = "Select * from Results where username = '\(username)'"
+          let query = "Select * from Results where username = \(username)"
           if sqlite3_prepare(dbPointer, query, -1, &stmt, nil) != SQLITE_OK{
               let err = String(cString: sqlite3_errmsg(dbPointer))
               print("Error in creating getALLUserResults query", err)
@@ -321,60 +305,18 @@ class QuizDBHelper{
           }
           return results
       }
-    func getSingleResult(id : Int) -> UserResult{
-        let query = "select * from Results where resultId = \(id);"
-        var stmt : OpaquePointer?
-        var res : UserResult?
-        if sqlite3_prepare(dbPointer, query, -1, &stmt, nil) == SQLITE_OK{
-            while (sqlite3_step(stmt) == SQLITE_ROW){
-                let id = sqlite3_column_int(stmt, 0)
-                let name = String(cString: sqlite3_column_text(stmt, 1))
-                let quizId = sqlite3_column_int(stmt, 2)
-                let rScore = sqlite3_column_double(stmt, 3)
-                
-                res = UserResult(rId: Int(id), user: name, qId: Int(quizId), score: rScore)
-            }
-        }
-        else{
-            let err = String(cString: sqlite3_errmsg(dbPointer)!)
-            print("error in creating getSingleResultQuery", err)
-        }
-        
-        return res!
-    }
-    
-    func getSingleResult(username : NSString, qId : Int) -> UserResult{
-        let query = "select * from Results where username = '\(username)' and quizId = \(qId);"
-        var stmt : OpaquePointer?
-        var res : UserResult?
-        if sqlite3_prepare(dbPointer, query, -1, &stmt, nil) == SQLITE_OK{
-            while (sqlite3_step(stmt) == SQLITE_ROW){
-                let id = sqlite3_column_int(stmt, 0)
-                let name = String(cString: sqlite3_column_text(stmt, 1))
-                let quizId = sqlite3_column_int(stmt, 2)
-                let rScore = sqlite3_column_double(stmt, 3)
-                
-                res = UserResult(rId: Int(id), user: name, qId: Int(quizId), score: rScore)
-            }
-        }
-        else{
-            let err = String(cString: sqlite3_errmsg(dbPointer)!)
-            print("error in creating getSingleResultQuery", err)
-        }
-        
-        return res!
-    }
  
-      func haveUserdoneQuiz(user : NSString, qId : Int) -> Bool{
+      func haveUserdoneQuiz(username : NSString, qId : Int) -> Bool{
           var stmt : OpaquePointer?
-          let query = "Select * from Results where username = '\(user)' AND quizId = \(qId)"
+          let query = "Select * from Results where username = \(username) AND quizId = \(qId)"
           if sqlite3_prepare(dbPointer, query, -1, &stmt, nil) != SQLITE_OK{
               let err = String(cString: sqlite3_errmsg(dbPointer))
-              print("Error in creating haveUserDoneQuiz query", err)
+              print("Error in creating getALLUserResults query", err)
+              return true
           }
           var resultCount = 0
           while(sqlite3_step(stmt) == SQLITE_ROW){
-              resultCount = 1
+              resultCount  = 1
           }
           if(resultCount == 0)
           {
@@ -384,26 +326,5 @@ class QuizDBHelper{
               return true
           }
       }
-    
-    
-    func updateQuizResult(id : Int, score : Double){
-        let query = "update Results SET resultScore = '\(score)' where id = ?;"
-        var stmt : OpaquePointer?
-        if sqlite3_prepare(dbPointer, query, -1, &stmt, nil) == SQLITE_OK{
-            sqlite3_bind_int(stmt, 1, Int32(id))
-            if sqlite3_step(stmt) == SQLITE_DONE{
-                print("result updated")
-            }
-            else{
-                print("error in updating result")
-            }
-        }
-        else{
-            print("Error in creating updatQuizResultQuery")
-        }
-    }
-    
-    
-}
-
+  }
 
