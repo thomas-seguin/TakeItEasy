@@ -61,6 +61,8 @@
 		84575D662853C86A00339A17 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84575D642853C86A00339A17 /* User+CoreDataClass.swift */; };
 		84575D672853C86A00339A17 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84575D652853C86A00339A17 /* User+CoreDataProperties.swift */; };
 		84575DEC285BBD5F00339A17 /* BookSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84575DEB285BBD5F00339A17 /* BookSearchCollectionViewCell.swift */; };
+		84575DEE285F9DB600339A17 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84575DED285F9DB600339A17 /* OTPViewController.swift */; };
+		84575DF1285FA0B000339A17 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84575DF0285FA0B000339A17 /* OTPView.swift */; };
 		84940BA228539F4F0089F333 /* bookSample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 84940BA128539F4F0089F333 /* bookSample.pdf */; };
 		84DB6B8728514F52000813FF /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB6B8628514F52000813FF /* BooksViewController.swift */; };
 		84DB6B892851927A000813FF /* GeneralBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB6B882851927A000813FF /* GeneralBooksCollectionViewCell.swift */; };
@@ -126,6 +128,8 @@
 		84575D642853C86A00339A17 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		84575D652853C86A00339A17 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84575DEB285BBD5F00339A17 /* BookSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		84575DED285F9DB600339A17 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		84575DF0285FA0B000339A17 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		84940BA128539F4F0089F333 /* bookSample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = bookSample.pdf; sourceTree = "<group>"; };
 		84DB6B8628514F52000813FF /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		84DB6B882851927A000813FF /* GeneralBooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralBooksCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -215,6 +219,7 @@
 		841EA18F2851367600318BCA /* TakeItEasy */ = {
 			isa = PBXGroup;
 			children = (
+				84575DEF285FA0A100339A17 /* OTPView */,
 				7E7ADDB7285D1A9F00BA7953 /* SoundEffects */,
 				7EE64405285936B400AE353C /* Helpers */,
 				256DD8242858D79E000FD8CB /* Music */,
@@ -246,6 +251,7 @@
 				047CB36B285A94FD0099F98D /* Note.swift */,
 				047CB36F285A98330099F98D /* NoteDBHelp.swift */,
 				84575DEB285BBD5F00339A17 /* BookSearchCollectionViewCell.swift */,
+				84575DED285F9DB600339A17 /* OTPViewController.swift */,
 			);
 			path = TakeItEasy;
 			sourceTree = "<group>";
@@ -291,6 +297,14 @@
 				84575D652853C86A00339A17 /* User+CoreDataProperties.swift */,
 			);
 			path = UserModel;
+			sourceTree = "<group>";
+		};
+		84575DEF285FA0A100339A17 /* OTPView */ = {
+			isa = PBXGroup;
+			children = (
+				84575DF0285FA0B000339A17 /* OTPView.swift */,
+			);
+			path = OTPView;
 			sourceTree = "<group>";
 		};
 		84DB6B9228523FC3000813FF /* BooksPDFs */ = {
@@ -396,7 +410,9 @@
 				7ECAEC9828570C2A00AC3B11 /* UserSingleton.swift in Sources */,
 				7ECAEC9C28570CB900AC3B11 /* MusicSearchManager.swift in Sources */,
 				7EE4E10C285141EA00E0373E /* SearchViewModel.swift in Sources */,
+				84575DF1285FA0B000339A17 /* OTPView.swift in Sources */,
 				7EE644072859371A00AE353C /* QuizModels.swift in Sources */,
+				84575DEE285F9DB600339A17 /* OTPViewController.swift in Sources */,
 				7E7ADDCB285D1B9B00BA7953 /* QuizViewModel.swift in Sources */,
 				7EE6440B28593B0E00AE353C /* QuizPopulator.swift in Sources */,
 				7E7ADDBF285D1B6A00BA7953 /* QuestionaireTableViewCell.swift in Sources */,

@@ -86,14 +86,29 @@ class LoginViewController: UIViewController {
             
             print("logged in")
             let loggedUser = searchUser(searchParameter: email)
+            var verified = 10
+            var thisUser = User()
             for user in loggedUser{
                 UserSingleton.userData.currentUsername = user.fName ?? "bob"
+                verified = Int(user.verified ?? 10)
+                thisUser = user
             }
+            print(verified)
+            if(verified == 1){
             guard let vc = storyboard?.instantiateViewController(withIdentifier: "main")else {
                 return
             }
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
+            } else {
+                guard let vc = storyboard?.instantiateViewController(withIdentifier: "OTP") as? OTPViewController else {
+                    return
+                }
+                vc.user = thisUser
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: true)
+                        
+                        }
             
         }else {
             test.text = "failed"
