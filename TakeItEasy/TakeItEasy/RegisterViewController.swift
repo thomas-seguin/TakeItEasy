@@ -156,6 +156,7 @@ class RegisterViewController: UIViewController {
         if valid{
             errorLabel.text = "creating"
         createUser(email: emailTxt.text ?? "", fName: fNameTxt.text ?? "", lName: lNameTxt.text ?? "", phoneNumber: phoneTxt.text ?? "")
+            UserSingleton.userData.currentUsername = fNameTxt.text ?? "empty"
         
         do {
             try KeyChainManger.save(service: "takeiteasy",
