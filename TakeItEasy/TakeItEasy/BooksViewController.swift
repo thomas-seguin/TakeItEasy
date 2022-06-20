@@ -11,6 +11,9 @@ import UIKit
 class BooksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
     //These are collection views that will be used
+
+    @IBOutlet weak var usernameText: UILabel!
+
     @IBOutlet weak var searchBooksCollection: UICollectionView!
     @IBOutlet weak var generalBooksCollection: UICollectionView!
     @IBOutlet weak var technicalBooksCollection: UICollectionView!
@@ -34,11 +37,8 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        userName.text = UserSingleton.userData.currentUsername
-        
-        //Call google api for three collection categories
-        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 2) {
+        usernameText.text = UserSingleton.userData.currentUsername
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 2){
             DispatchQueue.main.async{
                 self.cookBooksTitle.text = "Cook Books"
                 self.cookBooksCollection.reloadData()
