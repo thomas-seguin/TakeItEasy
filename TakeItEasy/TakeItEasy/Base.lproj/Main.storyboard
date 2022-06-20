@@ -836,7 +836,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7rZ-LH-J43">
                                 <rect key="frame" x="0.0" y="44" width="428" height="44"/>
                                 <color key="backgroundColor" name="MainBackground"/>
-                                <color key="barTintColor" name="MainBackground"/>
+                                <color key="barTintColor" name="DarkOuter"/>
                                 <textAttributes key="titleTextAttributes">
                                     <fontDescription key="fontDescription" name="HoeflerText-Black" family="Hoefler Text" pointSize="20"/>
                                 </textAttributes>
@@ -849,7 +849,7 @@
                                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="r0k-Ne-B3T">
                                                 <rect key="frame" x="313" y="4.6666666666666679" width="95" height="34.666666666666657"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <color key="backgroundColor" name="MainBackground"/>
+                                                <color key="backgroundColor" name="DarkOuter"/>
                                                 <color key="tintColor" name="MainButton"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" title="Logout"/>
@@ -864,7 +864,7 @@
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="J9g-bK-0AY">
                                 <rect key="frame" x="0.0" y="88" width="428" height="51"/>
                                 <color key="backgroundColor" systemColor="systemYellowColor"/>
-                                <color key="barTintColor" systemColor="systemYellowColor"/>
+                                <color key="barTintColor" name="DarkOuter"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="gbm-7H-GC2" id="LIz-Hm-r1j"/>
@@ -872,7 +872,7 @@
                             </searchBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4qQ-dj-zcH">
                                 <rect key="frame" x="20" y="220" width="388" height="284"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" name="DarkOuter"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="284" id="rsB-sz-O8W"/>
                                 </constraints>
@@ -935,7 +935,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ivk-U0-JX8"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" name="DarkOuter"/>
                         <constraints>
                             <constraint firstItem="4qQ-dj-zcH" firstAttribute="centerX" secondItem="xW4-Q4-vdB" secondAttribute="centerX" id="5Df-WS-BED"/>
                             <constraint firstItem="ivk-U0-JX8" firstAttribute="trailing" secondItem="8g6-NE-j38" secondAttribute="trailing" constant="20" id="JAg-Do-J65"/>
@@ -993,7 +993,7 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="100" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="yRq-EV-R3h">
                                 <rect key="frame" x="20" y="270" width="388" height="441"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" name="DarkOuter"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="441" id="NSH-W5-fFh"/>
                                 </constraints>
@@ -1063,7 +1063,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qRp-U3-KNH"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" name="DarkOuter"/>
                         <constraints>
                             <constraint firstItem="qRp-U3-KNH" firstAttribute="trailing" secondItem="RtI-KZ-P3u" secondAttribute="trailing" constant="20" id="2az-4L-Ybk"/>
                             <constraint firstItem="Zf9-uP-zuG" firstAttribute="top" secondItem="yRq-EV-R3h" secondAttribute="bottom" constant="8" symbolic="YES" id="2yA-Z0-1ya"/>
@@ -1141,7 +1141,7 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="220" estimatedRowHeight="220" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LLk-LZ-1yM">
                                 <rect key="frame" x="20" y="356" width="388" height="544"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" name="DarkOuter"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="215" id="Jem-iU-6Ca" customClass="ReviewTableViewCell" customModule="TakeItEasy" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="44.666666030883789" width="388" height="215"/>
@@ -1193,7 +1193,7 @@
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UfS-Wl-gvF"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" name="DarkOuter"/>
                         <constraints>
                             <constraint firstItem="cqh-IN-DY2" firstAttribute="top" secondItem="8pH-x3-h1J" secondAttribute="bottom" constant="8" id="0nd-lC-lB0"/>
                             <constraint firstItem="JYK-Fe-K8C" firstAttribute="leading" secondItem="UfS-Wl-gvF" secondAttribute="leading" constant="20" id="2V2-1T-zId"/>
