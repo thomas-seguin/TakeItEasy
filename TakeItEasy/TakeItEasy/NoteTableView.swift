@@ -16,6 +16,7 @@ class NoteTableView: UITableViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     
     var noteObject = [Note]()
+    var myNotes = [Note]()
     var filteredData : [Note] = []
    
     
@@ -37,6 +38,7 @@ class NoteTableView: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         if (firstLoad){
             firstLoad = false
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -54,9 +56,14 @@ class NoteTableView: UITableViewController, UISearchBarDelegate {
             } catch {
                 print("Fetch Failed")
             }
+            for note in noteObject{
+                if note.username == UserSingleton.userData.currentUsername{
+                    myNotes.append(note)
+                }
+            }
 //            noteObject = results
         }
-        arrayObject = NoteDBHelp.dbHelper.getAllUserNotes()
+        arrayObject = NoteDBHelp.dbHelper.getAllUserNotes(searchParameter: UserSingleton.userData.currentUsername)
         filteredData = noteObject
     
     }
@@ -121,7 +128,7 @@ class NoteTableView: UITableViewController, UISearchBarDelegate {
         
         if (searchText == ""){
 //            noteObject = filteredData
-            arrayObject = NoteDBHelp.dbHelper.getAllUserNotes()
+            arrayObject = NoteDBHelp.dbHelper.getAllUserNotes(searchParameter: UserSingleton.userData.currentUsername)
         } else{
 //            for searchedbar in arrayObject{
 //                if searchedbar.title.lowercased().contains(searchText.lowercased()){
