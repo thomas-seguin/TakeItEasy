@@ -1,57 +1,61 @@
-//
-//  BooksViewController.swift
-//  TakeItEasy
-//
-//  Created by admin on 6/8/22.
-//
-
 import UIKit
 
 
 class BooksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
-    @IBOutlet weak var usernameText: UILabel!
+    //These are collection views that will be used
     @IBOutlet weak var searchBooksCollection: UICollectionView!
     @IBOutlet weak var generalBooksCollection: UICollectionView!
     @IBOutlet weak var technicalBooksCollection: UICollectionView!
     @IBOutlet weak var cookBooksCollection: UICollectionView!
    
+    //Sectional headers
+    @IBOutlet weak var cookBooksTitle: UILabel!
+    @IBOutlet weak var technicalBooksTitle: UILabel!
+    @IBOutlet weak var generalBooksTitle: UILabel!
     
-    var filteredBooks = [Books]()
+    var filteredBooks = [Books]()  //filtered books after search
     var isSearchingBook = false
-    var allBooksCollection = [Books]()
+    var allBooksCollection = [Books]() //all books collection
     
+    //categories of books
     var cookBooks = [Books]()
     var generalBooks = [Books]()
     var technicalBooks = [Books]()
     
-    var allBooks = [Books]()
+    @IBOutlet weak var userName: UILabel! //user name
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameText.text = UserSingleton.userData.currentUsername
-        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 2){
+        
+        userName.text = UserSingleton.userData.currentUsername
+        
+        //Call google api for three collection categories
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 2) {
             DispatchQueue.main.async{
+                self.cookBooksTitle.text = "Cook Books"
                 self.cookBooksCollection.reloadData()
             }
         }
-        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=technicalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 1){
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=technicalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 1) {
             DispatchQueue.main.async{
+                self.technicalBooksTitle.text = "Technical Books"
                 self.technicalBooksCollection.reloadData()
             }
         }
+            
         
-        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=all+bookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 0){
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=all+bookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 0) {
             DispatchQueue.main.async{
+                self.generalBooksTitle.text = "General Books"
                 self.generalBooksCollection.reloadData()
             }
         }
-
     }
 
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if isSearchingBook {
+        if collectionView == searchBooksCollection {
             return filteredBooks.count
         }else if collectionView == cookBooksCollection{
             return cookBooks.count
@@ -65,87 +69,46 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        
-        func cell(cellIdentifier: String) -> UICollectionViewCell {
-            let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath)
-            bookCell.backgroundColor = UIColor.yellow
-            return bookCell
-        }
-        
         if collectionView == searchBooksCollection {
-            let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookSearchCell", for: indexPath) as! BookSearchCollectionViewCell
-            
-            let imgUrl = filteredBooks[indexPath.row].volumeInfo.imageLinks.thumbnail
-            if let imageUrl = URL(string: imgUrl){
-                do{
-                    let data = try Data(contentsOf: imageUrl)
-                    bookCell.imageBackground.image = UIImage(data: data)
-                }catch{
-                    print("Error loading image")
-                }
-            }
+            var bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "bookSearchCell", for: indexPath) as! CookBooksCollectionViewCell
+            cellBackgroundColorSetter(aCell: &bookCell, index: indexPath.row, books: filteredBooks)
             return bookCell
-             
         
         }else if collectionView == generalBooksCollection {
-            
-            let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalBookCell", for: indexPath) as! GeneralBooksCollectionViewCell
-            
-            let imgUrl = generalBooks[indexPath.row].volumeInfo.imageLinks.thumbnail
-            if let imageUrl = URL(string: imgUrl){
-                do{
-                    let data = try Data(contentsOf: imageUrl)
-                    bookCell.imageBackground.image = UIImage(data: data)
-                }catch{
-                    print("Error loading image")
-                }
-                
-            }
-
-            
+            var bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "generalBookCell", for: indexPath) as! CookBooksCollectionViewCell
+            cellBackgroundColorSetter(aCell: &bookCell, index: indexPath.row, books: generalBooks)
             return bookCell
-            
-            //return cell(cellIdentifier: "generalBookCell") as! GeneralBooksCollectionViewCell
+        }else if collectionView == technicalBooksCollection {
+            var bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "technicalBookCell", for: indexPath) as! CookBooksCollectionViewCell
+            cellBackgroundColorSetter(aCell: &bookCell, index: indexPath.row, books: technicalBooks)
+            return bookCell
+        }else{
+            var bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cookBookCell", for: indexPath) as! CookBooksCollectionViewCell
+            cellBackgroundColorSetter(aCell: &bookCell, index: indexPath.row, books: cookBooks)
+            return bookCell
+
         }
-        else if collectionView == technicalBooksCollection {
-            
-            let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "technicalBookCell", for: indexPath) as! TechnicalBooksCollectionViewCell
-            
-            let imgUrl = technicalBooks[indexPath.row].volumeInfo.imageLinks.thumbnail
-            if let imageUrl = URL(string: imgUrl){
-                do{
-                    let data = try Data(contentsOf: imageUrl)
-                    bookCell.imageBackground.image = UIImage(data: data)
-                }catch{
-                    print("Error loading image")
-                }
-                
-            }
-            return bookCell
-            
-            //return cell(cellIdentifier: "technicalBookCell") as! TechnicalBooksCollectionViewCell
-        }
-        else /*if collectionView == cookBooksCollection*/{
-            
-            let bookCell = collectionView.dequeueReusableCell(withReuseIdentifier: "cookBookCell", for: indexPath) as! CookBooksCollectionViewCell
-            //--------------------------------------------------------------------------------
-            let imgUrl = cookBooks[indexPath.row].volumeInfo.imageLinks.thumbnail
-            if let imageUrl = URL(string: imgUrl){
-                do{
-                    let data = try Data(contentsOf: imageUrl)
-                    bookCell.imageBackground.image = UIImage(data: data)
-                }catch{
-                    print("Error loading image")
-                }
-                
-            }
-
-            return bookCell
-
-        }/*else{
-            return cell(cellIdentifier: "bookSearchCell") as! BookSearchCollectionViewCell
-        }*/
+        
     }
+    // sets cell background cover
+    func cellBackgroundColorSetter(aCell: inout CookBooksCollectionViewCell, index: Int, books: [Books]){
+        let imgUrl = books[index].volumeInfo.imageLinks.thumbnail
+        if let imageUrl = URL(string: imgUrl){
+            do{
+                let data = try Data(contentsOf: imageUrl)
+                aCell.imageBackground.image = UIImage(data: data)
+            }catch{
+                print("Error loading image")
+            }
+            
+        }
+
+    }
+    
+    @IBAction func bookLogOutButton(_ sender: Any) {
+        navigationController?.popToRootViewController(animated: true)
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let storyObject = UIStoryboard(name: "Main", bundle: nil)
@@ -164,7 +127,7 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
         navigationController?.pushViewController(bookPDFController, animated: true)
     }
 
-    //--------------------------------------------------------------------------------------------------------------------------------------
+    //decodes google books apis
     func bookUrlDecoder(aUrlString: String, count: Int, completion: @escaping () -> ()){
 
         let fetchURL = URL(string: aUrlString)
@@ -205,81 +168,53 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
         }
         bookDataTask.resume()
     }
-    //--------------------------------------------------------------------------------------------------------------------------------------
+
 }
 // Implements search bar and display content of the search
 extension BooksViewController: UISearchBarDelegate{
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredBooks = searchText.isEmpty ? allBooksCollection : allBooksCollection.filter({$0.volumeInfo.title.lowercased().prefix(searchText.count) == searchText.lowercased()})
+        filteredBooks = searchText.isEmpty ? allBooksCollection : allBooksCollection.filter({
+            $0.volumeInfo.title.lowercased().prefix(searchText.count) == searchText.lowercased()})
         
-        self.searchBooksCollection.isHidden = false
-        
-        self.generalBooksCollection.isHidden = true
-        self.generalBooksCollection.reloadData()
-        
-        self.cookBooksCollection.isHidden = true
-        self.cookBooksCollection.reloadData()
-        
-        self.technicalBooksCollection.isHidden = true
-        self.technicalBooksCollection.reloadData()
-        
-        isSearchingBook = true
-        self.searchBooksCollection.reloadData()
-        
+        statusModifier(currentStatus: true)
         }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        self.searchBooksCollection.isHidden = true
+        statusModifier(currentStatus: false)
+        searchBar.text = ""
+        searchBar.resignFirstResponder()
+    }
+    
+    func statusModifier(currentStatus: Bool){
+        self.searchBooksCollection.isHidden = !currentStatus
         
-        self.generalBooksCollection.isHidden = false
+        self.generalBooksCollection.isHidden = currentStatus
         self.generalBooksCollection.reloadData()
         
-        self.cookBooksCollection.isHidden = false
+        self.cookBooksCollection.isHidden = currentStatus
         self.cookBooksCollection.reloadData()
         
-        self.technicalBooksCollection.isHidden = false
+        self.technicalBooksCollection.isHidden = currentStatus
         self.technicalBooksCollection.reloadData()
         
         self.searchBooksCollection.reloadData()
-        searchBar.resignFirstResponder()
     }
 }
 
 struct BooksApi: Codable {
-    //var kind: String
     var items: [Books]
 }
 struct Books: Codable{
-    //var kind, id, etag, selfLink: String
     var volumeInfo: BookDetails
-    //var accessInfo: AccessInfo
-    
 }
 struct BookDetails: Codable{
-    //AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY google api-key
     var title: String
     var authors: [String]
-    var publisher, publishedDate, description: String
-    //var industryIdentifiers: [IndustryIdentifiers]
-    //var readingModes: ReadingModes
-    //var pageCount: Int
-    //var printType: String
-    //var categories: [String]
-    //var maturityRating: String
     var imageLinks: ImageLinks
     var previewLink: String
 
 }
-/*
-struct AccessInfo: Codable{
-    var webReaderLink: String
-}
-struct IndustryIdentifiers: Codable{
-    var type, identifier: String
-}
-struct ReadingModes: Codable{
-    var text, image: Bool
-}*/
+
 struct ImageLinks: Codable{
     var smallThumbnail, thumbnail: String
 }
