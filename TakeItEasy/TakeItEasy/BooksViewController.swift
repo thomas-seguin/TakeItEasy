@@ -10,6 +10,7 @@ import UIKit
 
 class BooksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
+    @IBOutlet weak var usernameText: UILabel!
     @IBOutlet weak var searchBooksCollection: UICollectionView!
     @IBOutlet weak var generalBooksCollection: UICollectionView!
     @IBOutlet weak var technicalBooksCollection: UICollectionView!
@@ -28,6 +29,7 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        usernameText.text = UserSingleton.userData.currentUsername
         bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 2){
             DispatchQueue.main.async{
                 self.cookBooksCollection.reloadData()
