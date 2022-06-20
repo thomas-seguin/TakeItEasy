@@ -2,7 +2,7 @@ import UIKit
 
 
 class BooksViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
-    
+    let userDefaults = UserDefaults()
     //These are collection views that will be used
     @IBOutlet weak var searchBooksCollection: UICollectionView!
     @IBOutlet weak var generalBooksCollection: UICollectionView!
@@ -106,6 +106,7 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     @IBAction func bookLogOutButton(_ sender: Any) {
+        userDefaults.set(true, forKey: "remember")
         navigationController?.popToRootViewController(animated: true)
     }
     

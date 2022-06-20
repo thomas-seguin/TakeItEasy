@@ -12,7 +12,6 @@ class LoginViewController: UIViewController {
     let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var test: UILabel!
     @IBOutlet weak var rememberSwitch: UISwitch!
     @IBOutlet weak var passTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
@@ -81,14 +80,14 @@ class LoginViewController: UIViewController {
         let email = emailTxt.text ?? "test"
         let pass = passTxt.text
         
-        test.text = email
+        
         guard let data = KeyChainManger.get(service: "takeiteasy", account: email) else {
             
             return
         }
         let password = String(decoding: data, as: UTF8.self)
         if(password == pass){
-            test.text = "logged in"
+           
             
             if rememberSwitch.isOn{
                 
@@ -125,7 +124,7 @@ class LoginViewController: UIViewController {
                         }
             
         }else {
-            test.text = "failed"
+           
            print("failed to login")
         }
         

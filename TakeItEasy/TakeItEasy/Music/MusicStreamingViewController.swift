@@ -34,7 +34,7 @@ class MusicStreamingViewController: UIViewController,UICollectionViewDelegate,UI
     var playerItem:AVPlayerItem?
     
     @IBOutlet weak var volumeControlSlider: UISlider!
-    
+    let userDefaults = UserDefaults()
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var currentSong: UILabel!
     @IBOutlet weak var MusicCollectionView: UICollectionView!
@@ -52,9 +52,11 @@ class MusicStreamingViewController: UIViewController,UICollectionViewDelegate,UI
     }
     
     @IBAction func LogOutButton(_ sender: Any) {
+        userDefaults.set(false, forKey: "remember")
         let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
         let nextViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
         self.present(nextViewController, animated:true, completion:nil)
+        
     }
     
     @IBAction func volumeControl(_ sender: UISlider) {
