@@ -38,26 +38,28 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
         userName.text = UserSingleton.userData.currentUsername
         
         //Call google api for three collection categories
-        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=cookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 2) {
-            DispatchQueue.main.async{
-                self.cookBooksTitle.text = "Cook Books"
-                self.cookBooksCollection.reloadData()
-            }
-        }
-        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=technicalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 1) {
-            DispatchQueue.main.async{
-                self.technicalBooksTitle.text = "Technical Books"
-                self.technicalBooksCollection.reloadData()
-            }
-        }
-            
-        
         bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=all+bookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 0) {
             DispatchQueue.main.async{
                 self.generalBooksTitle.text = "General Books"
                 self.generalBooksCollection.reloadData()
             }
         }
+        
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=technicalbookpdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 1) {
+            DispatchQueue.main.async{
+                self.technicalBooksTitle.text = "Technical Books"
+                self.technicalBooksCollection.reloadData()
+            }
+        }
+        
+        bookUrlDecoder(aUrlString: "https://www.googleapis.com/books/v1/volumes?q=cookspdf&key=AIzaSyDHwXKpkrBLBQRgvDqB5fWcshK3vKi-CLY", count: 2) {
+            DispatchQueue.main.async{
+                self.cookBooksTitle.text = "Cook Books"
+                self.cookBooksCollection.reloadData()
+            }
+        }
+        
+
     }
 
     
