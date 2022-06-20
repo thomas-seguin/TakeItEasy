@@ -16,10 +16,10 @@ class NoteDBHelp{
 
 
 
-func getAllUserNotes() -> [Note]{
+func getAllUserNotes(searchParameter : String) -> [Note]{
         var notes = [Note]()
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Note")
-//            fetchRequest.predicate = NSPredicate(format: "title == %@", searchParameter)
+            fetchRequest.predicate = NSPredicate(format: "username == %@", searchParameter)
         do{
             notes = try context?.fetch(fetchRequest) as! [Note]
             print("data fetched")
