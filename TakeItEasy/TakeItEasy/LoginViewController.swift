@@ -55,6 +55,20 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let check = UserDefaults.standard.bool(forKey: "remember")
+         
+         if(check == true){
+             print("sending")
+             guard let vc = storyboard?.instantiateViewController(withIdentifier: "main")else {
+                 return
+             }
+             present(vc, animated: true)
+         }
+        
+    }
+    
 
     
     @IBAction func textChange(_ sender: Any) {
