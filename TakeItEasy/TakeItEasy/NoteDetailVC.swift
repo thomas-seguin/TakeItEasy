@@ -40,14 +40,12 @@ class NoteDetailVC: UIViewController {
     
 
          if (selectedNote == nil){
- //            let entity = NSEntityDescription.entity(forEntityName: "Note", in: context)
-             
- //            let newNote = Note(entity: entity!, insertInto: context)
+
              let newNote = NSEntityDescription.insertNewObject(forEntityName: "Note", into: context!) as! Note
-             newNote.id = noteList.count as NSNumber
              newNote.title = titleTF.text
              newNote.desc = descTV.text
              newNote.username = UserSingleton.userData.currentUsername
+             
              //assigning date to createdAt
              newNote.createdAt = Date()
              
@@ -165,11 +163,9 @@ class NoteDetailVC: UIViewController {
         
         if isStart{
             cancellSpeech()
-//            sender.setTitle("Start", for: .normal)
         }
         else{
             startSpeechRecog()
-//            sender.setTitle("stop", for: .normal)
         }
     }
     
