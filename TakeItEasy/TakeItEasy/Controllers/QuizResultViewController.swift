@@ -25,7 +25,7 @@ class QuizResultViewController: UIViewController, UITableViewDelegate, UITableVi
         newQuizResultViewModel?.playSound()
         let num = String(Int(newQuizResultViewModel!.getScore()))
         scoreLbl.text = "Quiz Score: " + num + "%"
-        pointsLbl.text = "Copy/Save and use this code at the FunZoneShop to redeem" + num + " points"
+        pointsLbl.text = "Copy/Save and use this code at the FunZoneShop to redeem " + num + " points"
         codeTxtField.text = newQuizResultViewModel?.getCode()
     }
     

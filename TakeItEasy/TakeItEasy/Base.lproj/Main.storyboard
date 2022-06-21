@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="syL-dV-5rF">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -219,11 +219,11 @@
                                     </imageView>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="DGI-ZG-VFp"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" name="DarkOuter"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1rl-Nf-jMk"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" name="DarkOuter"/>
                     </view>
                     <connections>
                         <outlet property="emailTxt" destination="qOK-yj-wzK" id="iPE-Lf-jX6"/>
@@ -266,7 +266,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1Qp-81-sxz"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" name="DarkOuter"/>
                     </view>
                     <connections>
                         <outlet property="otpLabel" destination="sN3-Pu-hqJ" id="bHP-HD-yI6"/>
@@ -321,13 +321,13 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jm1-ZM-6Xs">
                         <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
-                        <color key="sectionIndexBackgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" name="DarkOuter"/>
+                        <color key="sectionIndexBackgroundColor" name="DarkOuter"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" text="" id="Oma-9N-xIc">
                             <rect key="frame" x="0.0" y="0.0" width="428" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemYellowColor"/>
-                            <color key="barTintColor" systemColor="systemBackgroundColor"/>
+                            <color key="barTintColor" name="DarkOuter"/>
                             <textInputTraits key="textInputTraits"/>
                             <connections>
                                 <outlet property="delegate" destination="x4Z-TK-oEB" id="ybh-YR-STs"/>
@@ -384,7 +384,7 @@
                                         <constraint firstItem="Cae-cP-DBJ" firstAttribute="leading" secondItem="n7K-BL-y3j" secondAttribute="leadingMargin" id="oaY-tr-W04"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" name="DarkInner"/>
                                 <connections>
                                     <outlet property="dateLabel" destination="d0W-yY-bIL" id="9Y5-YX-Kbg"/>
                                     <outlet property="descLabel" destination="Cae-cP-DBJ" id="OeH-HP-gyI"/>
@@ -431,6 +431,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fNL-gP-1dp">
                                 <rect key="frame" x="20" y="131" width="388" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="DarkInner"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -444,7 +445,7 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="UFg-aD-l3j">
                                 <rect key="frame" x="20" y="234" width="388" height="425"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="DarkInner"/>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -494,7 +495,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UPN-wk-Yv5"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" name="DarkOuter"/>
                     </view>
                     <navigationItem key="navigationItem" title="Note Details" id="0MQ-iT-bHY">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="aAq-Mu-7MC">
@@ -524,6 +525,8 @@
                             <searchBar contentMode="redraw" fixedFrame="YES" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="izY-FS-c39">
                                 <rect key="frame" x="0.0" y="88" width="428" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="DarkInner"/>
+                                <color key="barTintColor" name="DarkOuter"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="nnf-CQ-970" id="Exg-4H-HEU"/>
@@ -685,7 +688,7 @@
                             <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fSM-RZ-DTG">
                                 <rect key="frame" x="0.0" y="152" width="428" height="673"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="DarkInner"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="IXS-YR-ljn">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -723,7 +726,7 @@
                             </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OAL-3U-3Xx"/>
-                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <color key="backgroundColor" name="DarkOuter"/>
                     </view>
                     <navigationItem key="navigationItem" id="lCz-bg-mId">
                         <barButtonItem key="backBarButtonItem" title="Books" id="p7Z-ub-fsg"/>
@@ -1704,7 +1707,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="G1m-VT-GIE"/>
         <segue reference="MFx-iQ-0nf"/>
         <segue reference="LOF-ST-Xrb"/>
     </inferredMetricsTieBreakers>
