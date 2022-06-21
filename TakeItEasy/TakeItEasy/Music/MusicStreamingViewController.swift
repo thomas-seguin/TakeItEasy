@@ -75,8 +75,7 @@ class MusicStreamingViewController: UIViewController,UICollectionViewDelegate,UI
         //does a background task
         let task = URLSession.shared.dataTask(with: url) { data, response, error in
             let retrievedList = String(data: data!, encoding: String.Encoding.utf8)
-            print("Printing Retrived List")
-            print(retrievedList)
+            print("Printing Retrived List",retrievedList)
             self.parseSongs(data: retrievedList!)
         }
         task.resume()
