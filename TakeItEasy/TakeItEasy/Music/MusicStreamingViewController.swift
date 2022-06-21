@@ -16,6 +16,7 @@ class MusicStreamingViewController: UIViewController,UICollectionViewDelegate,UI
     var player: Player!
     var musicURL: URL!
     
+    
     @IBOutlet weak var beginTimer: UILabel!
     @IBOutlet weak var durationLabel: UILabel!
     
@@ -23,7 +24,6 @@ class MusicStreamingViewController: UIViewController,UICollectionViewDelegate,UI
     
     var albumImage = ["img 1","img 2","img 3","img 4","img 5","img 6","img 7","img 8","img 9","img 10","img 11"]
     
-//    var songList:[Int: String] = [56:"Allthat.mp3",57:"Creativeminds.mp3",58:"Dreams.mp3",59:"Elevate.mp3",60:"Funday.mp3",61:"Hey.mp3",62:"Inspire.mp3",63:"Jazzyfrenchy.mp3",64:"Onceagain.mp3",65:"Photoalbum.mp3",66:"Ukulele.mp3"]
     
     var songList:[Int: String] = [:]
     
@@ -38,6 +38,9 @@ class MusicStreamingViewController: UIViewController,UICollectionViewDelegate,UI
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var currentSong: UILabel!
     @IBOutlet weak var MusicCollectionView: UICollectionView!
+    @IBOutlet weak var playPauseButton: UIButton!
+    @IBOutlet weak var previousSong: UIButton!
+    @IBOutlet weak var nextSong: UIButton!
     
     var indexNumber = [Int]()
     
@@ -46,18 +49,18 @@ class MusicStreamingViewController: UIViewController,UICollectionViewDelegate,UI
         player = Player()
         retrieveSongs()
         
+        playPauseButton.isEnabled = false
 //        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
 //        volumeControlSlider.transform = CGAffineTransform(rotationAngle: (CGFloat.pi / -2))
         
     }
     
+    
     @IBAction func LogOutButton(_ sender: Any) {
-        userDefaults.set(false, forKey: "remember")
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
-        self.present(nextViewController, animated:true, completion:nil)
+        UserSingleton.userData.logout(view: self.view)
         
     }
+    
     
     @IBAction func volumeControl(_ sender: UISlider) {
         player.avplayer.volume = sender.value
@@ -126,6 +129,8 @@ class MusicStreamingViewController: UIViewController,UICollectionViewDelegate,UI
         count = songs[indexPath.row].id
         print("song id",count)
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(getTime), userInfo: nil, repeats: true)
+        playPauseButton.isEnabled = true
+       
     }
     
     

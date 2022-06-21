@@ -57,9 +57,7 @@ class MPlayerViewController: UIViewController {
         }
     
     @IBAction func LogOutButton(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
-        self.present(nextViewController, animated:true, completion:nil)
+        UserSingleton.userData.logout(view: self.view)
     }
 
     

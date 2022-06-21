@@ -161,18 +161,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" id="SM5-5w-kzA">
-                                <rect key="frame" x="-2" y="25" width="429" height="818"/>
+                                <rect key="frame" x="-6" y="25" width="430" height="815"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-1" translatesAutoresizingMaskIntoConstraints="NO" id="udH-9t-vFi">
-                                        <rect key="frame" x="33" y="25" width="349" height="255"/>
+                                        <rect key="frame" x="33" y="25" width="500" height="255"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="255" id="Fwa-2N-Ymh"/>
                                             <constraint firstAttribute="width" constant="349" id="brw-lT-A5x"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="253" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WXJ-LV-53f">
-                                        <rect key="frame" x="24" y="288" width="381" height="18.666666666666686"/>
+                                        <rect key="frame" x="24" y="288" width="532" height="18.666666666666686"/>
                                         <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -180,7 +180,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MRE-ZM-GDn">
-                                        <rect key="frame" x="24" y="330" width="381" height="18.666666666666686"/>
+                                        <rect key="frame" x="24" y="330" width="532" height="18.666666666666686"/>
                                         <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -188,7 +188,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="255" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="email@email.com" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qOK-yj-wzK">
-                                        <rect key="frame" x="24" y="372" width="381" height="18.666666666666686"/>
+                                        <rect key="frame" x="24" y="372" width="532" height="18.666666666666686"/>
                                         <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -196,7 +196,7 @@
                                         </connections>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="254" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="111 111 1111" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YWB-iQ-YZB">
-                                        <rect key="frame" x="24" y="414" width="381" height="18.666666666666686"/>
+                                        <rect key="frame" x="24" y="414" width="532" height="18.666666666666686"/>
                                         <fontDescription key="fontDescription" name="HoeflerText-Regular" family="Hoefler Text" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
@@ -204,7 +204,7 @@
                                         </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sv3-RN-4hf">
-                                        <rect key="frame" x="20" y="515" width="389" height="52"/>
+                                        <rect key="frame" x="20" y="515" width="540" height="52"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Sign Up">
                                             <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
@@ -216,7 +216,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qcX-2r-u7q">
-                                        <rect key="frame" x="24" y="456" width="381" height="34"/>
+                                        <rect key="frame" x="24" y="456" width="532" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                         <connections>
@@ -230,7 +230,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bei-Je-JCh">
-                                        <rect key="frame" x="281.66666666666669" y="592" width="59.333333333333314" height="31"/>
+                                        <rect key="frame" x="432.66666666666669" y="592" width="59.333333333333314" height="31"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Login">
                                             <color key="baseForegroundColor" systemColor="systemPurpleColor"/>
@@ -1459,12 +1459,12 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="OnlIne" image="cloud.fill" catalog="system" id="vH3-ro-fBC"/>
                     <navigationItem key="navigationItem" id="oGm-NX-jeu">
-                        <barButtonItem key="leftBarButtonItem" title="Go Offline" id="XtW-0I-IPO">
+                        <barButtonItem key="leftBarButtonItem" title="Go Offline" id="ww0-m3-h1i">
                             <connections>
-                                <segue destination="o1N-5J-57r" kind="show" id="0rT-Oz-eOw"/>
+                                <segue destination="o1N-5J-57r" kind="show" id="mO3-ES-WpQ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="x3B-zx-asu">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="x3B-zx-asu">
                             <connections>
                                 <action selector="LogOutButton:" destination="XDc-xq-TYa" id="mOo-eS-MV4"/>
                             </connections>
@@ -1475,6 +1475,9 @@
                         <outlet property="beginTimer" destination="CKE-JE-DlV" id="eVA-np-mwd"/>
                         <outlet property="currentSong" destination="Dtg-3H-pp9" id="xRO-h0-YqN"/>
                         <outlet property="durationLabel" destination="XTI-W2-jfG" id="b3n-Mo-cf1"/>
+                        <outlet property="nextSong" destination="R7u-h4-9gF" id="Afj-Tj-jKz"/>
+                        <outlet property="playPauseButton" destination="Ynl-Yf-BKO" id="gDK-9n-E8b"/>
+                        <outlet property="previousSong" destination="lXO-LX-V1b" id="1VV-X0-M97"/>
                         <outlet property="progressBar" destination="woU-lN-YjN" id="LiB-wv-vCO"/>
                         <outlet property="volumeControlSlider" destination="rPh-I3-KQY" id="pbB-KZ-Zgm"/>
                     </connections>
@@ -1631,10 +1634,10 @@
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="6ob-xY-rgM">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="P4f-YZ-dfs">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="sd0-kC-sMC">
-                                <rect key="frame" x="327" y="4" width="81" height="36"/>
+                                <rect key="frame" x="323" y="4" width="85" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Logout">
+                                <buttonConfiguration key="configuration" style="plain" title="Log out">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -1657,7 +1660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OfA-v3-InT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-813.08411214953264" y="1721.598272138229"/>
+            <point key="canvasLocation" x="181" y="2411"/>
         </scene>
         <!--Item-->
         <scene sceneID="EuF-eF-8Nw">
@@ -1741,7 +1744,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" selectedImage="music.note.tv.fill" catalog="system" id="huz-A5-Olq"/>
                     <navigationItem key="navigationItem" id="7bF-6m-hYk">
-                        <barButtonItem key="rightBarButtonItem" title="Logout" id="y2f-Mw-UUU">
+                        <barButtonItem key="rightBarButtonItem" title="Log out" id="y2f-Mw-UUU">
                             <connections>
                                 <action selector="LogOutButton:" destination="o1N-5J-57r" id="YCZ-ZJ-meY"/>
                             </connections>
@@ -1755,7 +1758,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HqX-oi-8VJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="181" y="1722"/>
+            <point key="canvasLocation" x="181" y="1696"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

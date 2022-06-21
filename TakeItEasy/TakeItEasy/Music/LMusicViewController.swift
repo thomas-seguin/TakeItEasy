@@ -26,6 +26,7 @@ class LMusicViewController: UIViewController{
         
         initMusicList()
         configureSearchController()
+        myTable.isHidden = true
        
     }
     
@@ -69,9 +70,7 @@ class LMusicViewController: UIViewController{
     }
     
     @IBAction func LogOutButton(_ sender: Any) {
-        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "login") as! LoginViewController
-        self.present(nextViewController, animated:true, completion:nil)
+        UserSingleton.userData.logout(view: self.view)
     }
     
 }
@@ -113,14 +112,17 @@ extension LMusicViewController: UITableViewDelegate,UITableViewDataSource, UISea
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searching = false
         //musicArray.removeAll()
+        myTable.isHidden = false
         myTable.reloadData()
     }
     
     
     func updateSearchResults(for searchController: UISearchController) {
+        
         let searchText = searchController.searchBar.text!
         if !searchText.isEmpty
         {
+            myTable.isHidden = false
             searching = true
             musicArray.removeAll()
             for song in musicList
@@ -134,7 +136,7 @@ extension LMusicViewController: UITableViewDelegate,UITableViewDataSource, UISea
         else
         {
             searching = false
-           musicArray.removeAll()
+            musicArray.removeAll()
             musicArray = musicList
         }
         myTable.reloadData()
@@ -148,6 +150,7 @@ extension LMusicViewController: UITableViewDelegate,UITableViewDataSource, UISea
                 playerScreen.musicFile = musicArray[indexPath.row].songName
                 playerScreen.incomingTemp2 = musicArray[indexPath.row].albumImage
                 self.present(playerScreen, animated:  true, completion: nil)
+            
         }
 }
 
