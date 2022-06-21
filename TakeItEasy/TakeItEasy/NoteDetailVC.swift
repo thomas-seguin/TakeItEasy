@@ -40,14 +40,12 @@ class NoteDetailVC: UIViewController {
     
 
          if (selectedNote == nil){
- //            let entity = NSEntityDescription.entity(forEntityName: "Note", in: context)
-             
- //            let newNote = Note(entity: entity!, insertInto: context)
+
              let newNote = NSEntityDescription.insertNewObject(forEntityName: "Note", into: context!) as! Note
-             newNote.id = noteList.count as NSNumber
              newNote.title = titleTF.text
              newNote.desc = descTV.text
              newNote.username = UserSingleton.userData.currentUsername
+             
              //assigning date to createdAt
              newNote.createdAt = Date()
              
@@ -135,11 +133,6 @@ class NoteDetailVC: UIViewController {
             let msg = resp?.bestTranscription.formattedString
             self.descTV.text = msg
             
-            var colorValue = ""
-            for str in resp!.bestTranscription.segments{
-                let indexTo = msg!.index(msg!.startIndex, offsetBy : str.substringRange.location)
-                colorValue = String(msg![indexTo...])
-            }
             
         })
         
@@ -165,14 +158,16 @@ class NoteDetailVC: UIViewController {
         
         if isStart{
             cancellSpeech()
-//            sender.setTitle("Start", for: .normal)
+            
         }
         else{
             startSpeechRecog()
-//            sender.setTitle("stop", for: .normal)
         }
     }
     
+    @IBAction func logOut(_ sender: Any) {
+        UserSingleton.userData.logout(view: self.view)
+    }
     
     
 }
