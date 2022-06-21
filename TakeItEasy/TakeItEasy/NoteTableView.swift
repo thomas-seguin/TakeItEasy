@@ -132,4 +132,10 @@ class NoteTableView: UITableViewController, UISearchBarDelegate {
             print("deleting error")
         }
     }
+    
+    
+    @IBAction func logOut(_ sender: Any) {
+        
+        UserSingleton.userData.logout(view: self.view)
+    }
 }

@@ -165,6 +165,9 @@ class NoteDetailVC: UIViewController {
         }
     }
     
+    @IBAction func logOut(_ sender: Any) {
+        UserSingleton.userData.logout(view: self.view)
+    }
     
     
 }
