@@ -219,7 +219,7 @@
                                     </imageView>
                                 </subviews>
                                 <viewLayoutGuide key="safeArea" id="DGI-ZG-VFp"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <color key="backgroundColor" name="DarkOuter"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1rl-Nf-jMk"/>
@@ -1704,7 +1704,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="G1m-VT-GIE"/>
         <segue reference="MFx-iQ-0nf"/>
         <segue reference="LOF-ST-Xrb"/>
     </inferredMetricsTieBreakers>
