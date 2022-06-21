@@ -21,10 +21,10 @@
 		2509C85C28600B2000513E2B /* On the precipice.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2509C85328600B1F00513E2B /* On the precipice.mp3 */; };
 		2509C85D28600B2000513E2B /* Find Love.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2509C85428600B2000513E2B /* Find Love.mp3 */; };
 		2509C85E28600B2000513E2B /* Carnival of rust.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2509C85528600B2000513E2B /* Carnival of rust.mp3 */; };
-		2509C86028600BA600513E2B /* MPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509C85F28600BA600513E2B /* MPlayerViewController.swift */; };
-		2509C86228600BC900513E2B /* LMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509C86128600BC900513E2B /* LMusicViewController.swift */; };
-		2509C86428600BF400513E2B /* LocalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509C86328600BF400513E2B /* LocalTableViewCell.swift */; };
-		2509C86628600C1200513E2B /* MusicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2509C86528600C1200513E2B /* MusicData.swift */; };
+		2564681428610414000E5FB6 /* MusicData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2564681328610414000E5FB6 /* MusicData.swift */; };
+		2564681628610438000E5FB6 /* LocalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2564681528610438000E5FB6 /* LocalTableViewCell.swift */; };
+		2564681828610466000E5FB6 /* LMusicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2564681728610466000E5FB6 /* LMusicViewController.swift */; };
+		2564681A2861048D000E5FB6 /* MPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256468192861048D000E5FB6 /* MPlayerViewController.swift */; };
 		256DD8262858D7CE000FD8CB /* MusicStreamingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD8252858D7CE000FD8CB /* MusicStreamingViewController.swift */; };
 		256DD8282858D7E9000FD8CB /* SongsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD8272858D7E9000FD8CB /* SongsCollectionViewCell.swift */; };
 		256DD82A2858D801000FD8CB /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 256DD8292858D801000FD8CB /* Song.swift */; };
@@ -61,6 +61,8 @@
 		84575D662853C86A00339A17 /* User+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84575D642853C86A00339A17 /* User+CoreDataClass.swift */; };
 		84575D672853C86A00339A17 /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84575D652853C86A00339A17 /* User+CoreDataProperties.swift */; };
 		84575DEC285BBD5F00339A17 /* BookSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84575DEB285BBD5F00339A17 /* BookSearchCollectionViewCell.swift */; };
+		84575DEE285F9DB600339A17 /* OTPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84575DED285F9DB600339A17 /* OTPViewController.swift */; };
+		84575DF1285FA0B000339A17 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84575DF0285FA0B000339A17 /* OTPView.swift */; };
 		84940BA228539F4F0089F333 /* bookSample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 84940BA128539F4F0089F333 /* bookSample.pdf */; };
 		84DB6B8728514F52000813FF /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB6B8628514F52000813FF /* BooksViewController.swift */; };
 		84DB6B892851927A000813FF /* GeneralBooksCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84DB6B882851927A000813FF /* GeneralBooksCollectionViewCell.swift */; };
@@ -84,10 +86,10 @@
 		2509C85328600B1F00513E2B /* On the precipice.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "On the precipice.mp3"; sourceTree = "<group>"; };
 		2509C85428600B2000513E2B /* Find Love.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Find Love.mp3"; sourceTree = "<group>"; };
 		2509C85528600B2000513E2B /* Carnival of rust.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Carnival of rust.mp3"; sourceTree = "<group>"; };
-		2509C85F28600BA600513E2B /* MPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MPlayerViewController.swift; path = ../../../../../MPlayerViewController.swift; sourceTree = "<group>"; };
-		2509C86128600BC900513E2B /* LMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LMusicViewController.swift; path = ../../../../../LMusicViewController.swift; sourceTree = "<group>"; };
-		2509C86328600BF400513E2B /* LocalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LocalTableViewCell.swift; path = ../../../../../LocalTableViewCell.swift; sourceTree = "<group>"; };
-		2509C86528600C1200513E2B /* MusicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MusicData.swift; path = ../../../../../MusicData.swift; sourceTree = "<group>"; };
+		2564681328610414000E5FB6 /* MusicData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicData.swift; sourceTree = "<group>"; };
+		2564681528610438000E5FB6 /* LocalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalTableViewCell.swift; sourceTree = "<group>"; };
+		2564681728610466000E5FB6 /* LMusicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LMusicViewController.swift; sourceTree = "<group>"; };
+		256468192861048D000E5FB6 /* MPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MPlayerViewController.swift; sourceTree = "<group>"; };
 		256DD8252858D7CE000FD8CB /* MusicStreamingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicStreamingViewController.swift; sourceTree = "<group>"; };
 		256DD8272858D7E9000FD8CB /* SongsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongsCollectionViewCell.swift; sourceTree = "<group>"; };
 		256DD8292858D801000FD8CB /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
@@ -126,6 +128,8 @@
 		84575D642853C86A00339A17 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
 		84575D652853C86A00339A17 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		84575DEB285BBD5F00339A17 /* BookSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		84575DED285F9DB600339A17 /* OTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewController.swift; sourceTree = "<group>"; };
+		84575DF0285FA0B000339A17 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		84940BA128539F4F0089F333 /* bookSample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = bookSample.pdf; sourceTree = "<group>"; };
 		84DB6B8628514F52000813FF /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		84DB6B882851927A000813FF /* GeneralBooksCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralBooksCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -169,10 +173,10 @@
 				256DD8272858D7E9000FD8CB /* SongsCollectionViewCell.swift */,
 				256DD8292858D801000FD8CB /* Song.swift */,
 				256DD82B2858D80C000FD8CB /* Player.swift */,
-				2509C85F28600BA600513E2B /* MPlayerViewController.swift */,
-				2509C86128600BC900513E2B /* LMusicViewController.swift */,
-				2509C86328600BF400513E2B /* LocalTableViewCell.swift */,
-				2509C86528600C1200513E2B /* MusicData.swift */,
+				2564681328610414000E5FB6 /* MusicData.swift */,
+				2564681528610438000E5FB6 /* LocalTableViewCell.swift */,
+				2564681728610466000E5FB6 /* LMusicViewController.swift */,
+				256468192861048D000E5FB6 /* MPlayerViewController.swift */,
 			);
 			path = Music;
 			sourceTree = "<group>";
@@ -215,6 +219,7 @@
 		841EA18F2851367600318BCA /* TakeItEasy */ = {
 			isa = PBXGroup;
 			children = (
+				84575DEF285FA0A100339A17 /* OTPView */,
 				7E7ADDB7285D1A9F00BA7953 /* SoundEffects */,
 				7EE64405285936B400AE353C /* Helpers */,
 				256DD8242858D79E000FD8CB /* Music */,
@@ -246,6 +251,7 @@
 				047CB36B285A94FD0099F98D /* Note.swift */,
 				047CB36F285A98330099F98D /* NoteDBHelp.swift */,
 				84575DEB285BBD5F00339A17 /* BookSearchCollectionViewCell.swift */,
+				84575DED285F9DB600339A17 /* OTPViewController.swift */,
 			);
 			path = TakeItEasy;
 			sourceTree = "<group>";
@@ -291,6 +297,14 @@
 				84575D652853C86A00339A17 /* User+CoreDataProperties.swift */,
 			);
 			path = UserModel;
+			sourceTree = "<group>";
+		};
+		84575DEF285FA0A100339A17 /* OTPView */ = {
+			isa = PBXGroup;
+			children = (
+				84575DF0285FA0B000339A17 /* OTPView.swift */,
+			);
+			path = OTPView;
 			sourceTree = "<group>";
 		};
 		84DB6B9228523FC3000813FF /* BooksPDFs */ = {
@@ -389,17 +403,21 @@
 				84575D5F2853C43000339A17 /* LoginViewController.swift in Sources */,
 				84DB6B8B285192AF000813FF /* CookBooksCollectionViewCell.swift in Sources */,
 				047CB368285A8C290099F98D /* NoteCell.swift in Sources */,
-				2509C86428600BF400513E2B /* LocalTableViewCell.swift in Sources */,
+				2564681428610414000E5FB6 /* MusicData.swift in Sources */,
 				84575D672853C86A00339A17 /* User+CoreDataProperties.swift in Sources */,
 				047CB36A285A93170099F98D /* NoteDetailVC.swift in Sources */,
 				256DD82C2858D80C000FD8CB /* Player.swift in Sources */,
 				7ECAEC9828570C2A00AC3B11 /* UserSingleton.swift in Sources */,
 				7ECAEC9C28570CB900AC3B11 /* MusicSearchManager.swift in Sources */,
+				2564681628610438000E5FB6 /* LocalTableViewCell.swift in Sources */,
 				7EE4E10C285141EA00E0373E /* SearchViewModel.swift in Sources */,
+				84575DF1285FA0B000339A17 /* OTPView.swift in Sources */,
 				7EE644072859371A00AE353C /* QuizModels.swift in Sources */,
+				84575DEE285F9DB600339A17 /* OTPViewController.swift in Sources */,
 				7E7ADDCB285D1B9B00BA7953 /* QuizViewModel.swift in Sources */,
 				7EE6440B28593B0E00AE353C /* QuizPopulator.swift in Sources */,
 				7E7ADDBF285D1B6A00BA7953 /* QuestionaireTableViewCell.swift in Sources */,
+				2564681828610466000E5FB6 /* LMusicViewController.swift in Sources */,
 				84DB6B8F28523082000813FF /* BookPDFViewController.swift in Sources */,
 				7EE4E10A285141C600E0373E /* SearchViewController.swift in Sources */,
 				84DB6B892851927A000813FF /* GeneralBooksCollectionViewCell.swift in Sources */,
@@ -413,8 +431,6 @@
 				841EA1912851367600318BCA /* AppDelegate.swift in Sources */,
 				841EA1932851367600318BCA /* SceneDelegate.swift in Sources */,
 				256DD8282858D7E9000FD8CB /* SongsCollectionViewCell.swift in Sources */,
-				2509C86228600BC900513E2B /* LMusicViewController.swift in Sources */,
-				2509C86628600C1200513E2B /* MusicData.swift in Sources */,
 				7E7ADDC9285D1B9700BA7953 /* QuestionaireViewModel.swift in Sources */,
 				047CB366285A8B3D0099F98D /* NoteTableView.swift in Sources */,
 				7E7ADDBD285D1B6200BA7953 /* QuizCollectionViewCell.swift in Sources */,
@@ -428,7 +444,7 @@
 				84DB6B8D285192D9000813FF /* TechnicalBooksCollectionViewCell.swift in Sources */,
 				84575D662853C86A00339A17 /* User+CoreDataClass.swift in Sources */,
 				7E7ADDC5285D1B7800BA7953 /* ReviewTableViewCell.swift in Sources */,
-				2509C86028600BA600513E2B /* MPlayerViewController.swift in Sources */,
+				2564681A2861048D000E5FB6 /* MPlayerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +587,7 @@
 		841EA1A52851367900318BCA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -601,7 +617,7 @@
 		841EA1A62851367900318BCA /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

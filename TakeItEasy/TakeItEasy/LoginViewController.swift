@@ -12,7 +12,6 @@ class LoginViewController: UIViewController {
     let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext
     
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var test: UILabel!
     @IBOutlet weak var rememberSwitch: UISwitch!
     @IBOutlet weak var passTxt: UITextField!
     @IBOutlet weak var emailTxt: UITextField!
@@ -55,6 +54,20 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let check = UserDefaults.standard.bool(forKey: "remember")
+         
+         if(check == true){
+             print("sending")
+             guard let vc = storyboard?.instantiateViewController(withIdentifier: "main")else {
+                 return
+             }
+             present(vc, animated: true)
+         }
+        
+    }
+    
 
     
     @IBAction func textChange(_ sender: Any) {
@@ -67,14 +80,14 @@ class LoginViewController: UIViewController {
         let email = emailTxt.text ?? "test"
         let pass = passTxt.text
         
-        test.text = email
+        
         guard let data = KeyChainManger.get(service: "takeiteasy", account: email) else {
             
             return
         }
         let password = String(decoding: data, as: UTF8.self)
         if(password == pass){
-            test.text = "logged in"
+           
             
             if rememberSwitch.isOn{
                 
@@ -86,17 +99,32 @@ class LoginViewController: UIViewController {
             
             print("logged in")
             let loggedUser = searchUser(searchParameter: email)
+            var verified = 10
+            var thisUser = User()
             for user in loggedUser{
                 UserSingleton.userData.currentUsername = user.fName ?? "bob"
+                verified = Int(user.verified ?? 10)
+                thisUser = user
             }
+            print(verified)
+            if(verified == 1){
             guard let vc = storyboard?.instantiateViewController(withIdentifier: "main")else {
                 return
             }
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
+            } else {
+                guard let vc = storyboard?.instantiateViewController(withIdentifier: "OTP") as? OTPViewController else {
+                    return
+                }
+                vc.user = thisUser
+                vc.modalPresentationStyle = .fullScreen
+                present(vc, animated: true)
+                        
+                        }
             
         }else {
-            test.text = "failed"
+           
            print("failed to login")
         }
         

@@ -20,6 +20,7 @@ extension User {
     @NSManaged public var fName: String?
     @NSManaged public var lastName: String?
     @NSManaged public var phoneNumber: String?
+    @NSManaged public var verified: NSNumber?
 
 }
 
