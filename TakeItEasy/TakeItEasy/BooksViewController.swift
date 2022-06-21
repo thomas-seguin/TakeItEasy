@@ -106,8 +106,7 @@ class BooksViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     @IBAction func bookLogOutButton(_ sender: Any) {
-        userDefaults.set(true, forKey: "remember")
-        navigationController?.popToRootViewController(animated: true)
+        UserSingleton.userData.logout(view: self.view)
     }
     
     

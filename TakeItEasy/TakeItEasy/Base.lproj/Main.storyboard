@@ -406,9 +406,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="J3b-kk-iaa">
                             <color key="tintColor" systemColor="systemTealColor"/>
-                            <connections>
-                                <segue destination="syL-dV-5rF" kind="show" id="P2O-ou-EVi"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -500,9 +497,6 @@
                     <navigationItem key="navigationItem" title="Note Details" id="0MQ-iT-bHY">
                         <barButtonItem key="rightBarButtonItem" title="Logout" id="aAq-Mu-7MC">
                             <color key="tintColor" systemColor="systemTealColor"/>
-                            <connections>
-                                <segue destination="syL-dV-5rF" kind="show" id="cKG-nm-fMb"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -1708,7 +1702,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="MFx-iQ-0nf"/>
-        <segue reference="LOF-ST-Xrb"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="Failed" width="1074" height="906"/>
