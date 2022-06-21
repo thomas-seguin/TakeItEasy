@@ -49,8 +49,7 @@ class MusicStreamingViewController: UIViewController,UICollectionViewDelegate,UI
         player = Player()
         retrieveSongs()
         
-        playPauseButton.isEnabled = false
-//        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        playPauseButton.isEnabled = false 
 //        volumeControlSlider.transform = CGAffineTransform(rotationAngle: (CGFloat.pi / -2))
         
     }
