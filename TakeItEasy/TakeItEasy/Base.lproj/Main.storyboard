@@ -1464,7 +1464,7 @@
                                 <segue destination="o1N-5J-57r" kind="show" id="mO3-ES-WpQ"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Log out" id="x3B-zx-asu">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="x3B-zx-asu">
                             <connections>
                                 <action selector="LogOutButton:" destination="XDc-xq-TYa" id="mOo-eS-MV4"/>
                             </connections>
@@ -1637,7 +1637,7 @@
                                 <rect key="frame" x="323" y="4" width="85" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Log out">
+                                <buttonConfiguration key="configuration" style="plain" title="Logout">
                                     <fontDescription key="titleFontDescription" type="system" pointSize="18"/>
                                 </buttonConfiguration>
                                 <connections>
@@ -1671,7 +1671,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lSj-1X-839">
-                                <rect key="frame" x="0.0" y="140" width="428" height="703"/>
+                                <rect key="frame" x="0.0" y="88" width="428" height="755"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="DarkOuter"/>
                                 <prototypes>
@@ -1743,8 +1743,8 @@
                         <color key="backgroundColor" name="DarkOuter"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" selectedImage="music.note.tv.fill" catalog="system" id="huz-A5-Olq"/>
-                    <navigationItem key="navigationItem" id="7bF-6m-hYk">
-                        <barButtonItem key="rightBarButtonItem" title="Log out" id="y2f-Mw-UUU">
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="7bF-6m-hYk">
+                        <barButtonItem key="rightBarButtonItem" title="Logout" id="y2f-Mw-UUU">
                             <connections>
                                 <action selector="LogOutButton:" destination="o1N-5J-57r" id="YCZ-ZJ-meY"/>
                             </connections>
@@ -1758,7 +1758,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HqX-oi-8VJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="181" y="1696"/>
+            <point key="canvasLocation" x="180.84112149532709" y="1695.6803455723543"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
