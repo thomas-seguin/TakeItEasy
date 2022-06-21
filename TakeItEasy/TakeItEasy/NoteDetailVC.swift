@@ -133,11 +133,6 @@ class NoteDetailVC: UIViewController {
             let msg = resp?.bestTranscription.formattedString
             self.descTV.text = msg
             
-            var colorValue = ""
-            for str in resp!.bestTranscription.segments{
-                let indexTo = msg!.index(msg!.startIndex, offsetBy : str.substringRange.location)
-                colorValue = String(msg![indexTo...])
-            }
             
         })
         
@@ -163,6 +158,7 @@ class NoteDetailVC: UIViewController {
         
         if isStart{
             cancellSpeech()
+            
         }
         else{
             startSpeechRecog()
